@@ -1,5 +1,4 @@
 // @flow
-
 import * as React from 'react'
 import NextHead from 'next/head'
 
@@ -9,6 +8,6 @@ type Props = {
 
 export const Head = ({ title }: Props) => (
 	<NextHead>
-		<title>Mercado Libre</title>
+		<title>{title}</title>
 	</NextHead>
 )
