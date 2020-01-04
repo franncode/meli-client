@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>paste</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="home" transform="translate(-269.000000, -214.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="searchbar-copy" transform="translate(259.000000, 204.000000)">
+                <g id="paste" transform="translate(10.000000, 10.000000)">
+                    <path d="M11.52,0 L0.64,0 C0.28671875,0 0,0.28671875 0,0.64 L0,11.52 C0,11.8732813 0.28671875,12.16 0.64,12.16 L11.52,12.16 C11.8732813,12.16 12.16,11.8732813 12.16,11.52 L12.16,0.64 C12.16,0.28671875 11.8732812,0 11.52,0 Z M10.88,10.88 L1.28,10.88 L1.28,1.28 L10.88,1.28 L10.88,10.88 L10.88,10.88 Z" id="Shape"></path>
+                    <path d="M14.72,13.12 L14.72,14.72 L13.12,14.72 L13.12,16 L15.36,16 C15.7132813,16 16,15.7132812 16,15.36 L16,13.12 L14.72,13.12 Z" id="Path"></path>
+                    <rect id="Rectangle" x="8.19840625" y="14.72" width="3.4431875" height="1.28"></rect>
+                    <path d="M5.12,14.72 L5.12,13.12 L3.84,13.12 L3.84,15.36 C3.84,15.7132813 4.12671875,16 4.48,16 L6.72,16 L6.72,14.72 L5.12,14.72 Z" id="Path"></path>
+                    <path d="M15.36,3.84 L13.12,3.84 L13.12,5.12 L14.72,5.12 L14.72,6.72 L16,6.72 L16,4.48 C16,4.12671875 15.7132812,3.84 15.36,3.84 Z" id="Path"></path>
+                    <rect id="Rectangle" x="14.72" y="8.19840625" width="1.28" height="3.4431875"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

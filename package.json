@@ -1,0 +1,47 @@
+{
+	"name": "downtube",
+	"version": "0.1.0",
+	"author": "Francisco Rodriguez <fjrodriguez.353@gmail.com> (https://www.linkedin.com/in/franncode)",
+	"private": true,
+	"browserslist": [
+		"defaults"
+	],
+	"scripts": {
+		"audit": "lighthouse https://downtube.now.sh --view",
+		"build": "next build",
+		"dev": "next dev",
+		"flow": "flow",
+		"prod": "npm run build && npm run start",
+		"start": "next start",
+		"test": "jest",
+		"test:watch": "jest --watch"
+	},
+	"dependencies": {
+		"@zeit/next-sass": "^1.0.1",
+		"isomorphic-unfetch": "^3.0.0",
+		"next": "9.1.5",
+		"node-sass": "^4.13.0",
+		"react": "16.12.0",
+		"react-dom": "16.12.0"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.7.7",
+		"@babel/preset-env": "^7.7.7",
+		"@babel/preset-react": "^7.7.4",
+		"autoprefixer": "^9.7.3",
+		"babel-eslint": "^10.0.3",
+		"babel-jest": "^24.9.0",
+		"babel-plugin-transform-flow-strip-types": "^6.22.0",
+		"enzyme": "^3.11.0",
+		"enzyme-adapter-react-16": "^1.15.2",
+		"flow-bin": "^0.114.0",
+		"identity-obj-proxy": "^3.0.0",
+		"jest": "^24.9.0",
+		"lighthouse": "^5.6.0",
+		"next-compose-plugins": "^2.2.0",
+		"next-offline": "^4.0.6",
+		"postcss": "^7.0.25",
+		"react-addons-test-utils": "^15.6.2",
+		"react-test-renderer": "^16.12.0"
+	}
+}

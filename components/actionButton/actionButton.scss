@@ -1,0 +1,17 @@
+@import '../../public/styles/variables.scss';
+
+.actionButton {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 36px;
+	padding: 0 10px;
+	border-radius: 20px;
+	font-size: 14px;
+	color: white;
+	background-color: $color-primary;
+	> img,
+	> p {
+		margin-right: 10px;
+	}
+}

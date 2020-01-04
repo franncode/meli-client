@@ -1,0 +1,27 @@
+@import '../public/styles/fonts.scss', '../public/styles/global.scss',
+	'../public/styles/text.scss';
+
+.home {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	background: url('/imgs/background.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+	> img {
+		margin-top: 120px;
+	}
+	> p {
+		color: white;
+	}
+	> div {
+		display: flex;
+		border-radius: 20px;
+		background-color: #616161;
+	}
+}
