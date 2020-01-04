@@ -18,7 +18,7 @@ class MyApp extends App {
 		const { Component, pageProps } = this.props
 		return (
 			<Layout>
-				<Component {...pageProps} setAlert={setAlert} />
+				<Component {...pageProps} setAlert={this.setAlert} />
 			</Layout>
 		)
 	}

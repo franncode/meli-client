@@ -9,7 +9,7 @@ export default class customDocument extends Document {
 					<link
 						rel='shortcut icon'
 						type='image/png'
-						href='/imgs/appIcon48.png'
+						href='/favicons/favicon.png'
 					/>
 					<link rel='manifest' href='/manifest.json' />
 					<meta charSet='utf-8' />
@@ -33,7 +33,7 @@ export default class customDocument extends Document {
 						content='width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0'
 					/>
 					<meta name='theme-color' content='#FFE600' />
-					<link rel='apple-touch-icon' href='/imgs/appIcon192.png' />
+					<link rel='apple-touch-icon' href='/favicons/appIcon192.png' />
 					<meta name='apple-mobile-web-app-title' content='Mercado Libre' />
 					<meta name='apple-mobile-web-app-capable' content='yes' />
 					<meta name='mobile-web-app-capable' content='yes' />
@@ -43,22 +43,22 @@ export default class customDocument extends Document {
 					/>
 					<meta name='apple-mobile-web-app-capable' content='yes' />
 					<link
-						href='/launch/apple_splash_750.png'
+						href='/splash/apple_splash_750.png'
 						sizes='750x1334'
 						rel='apple-touch-startup-image'
 					/>
 					<link
-						href='/launch/apple_splash_1125.png'
+						href='/splash/apple_splash_1125.png'
 						sizes='1125x2436'
 						rel='apple-touch-startup-image'
 					/>
 					<link
-						href='/launch/apple_splash_1242.png'
+						href='/splash/apple_splash_1242.png'
 						sizes='1242x2208'
 						rel='apple-touch-startup-image'
 					/>
 					<link
-						href='/launch/apple_splash_640.png'
+						href='/splash/apple_splash_640.png'
 						sizes='640x1136'
 						rel='apple-touch-startup-image'
 					/>

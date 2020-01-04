@@ -8,7 +8,6 @@
 	align-items: center;
 	width: 100vw;
 	height: 100vh;
-	background: url('/imgs/background.png');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
@@ -18,6 +17,8 @@
 	}
 	> p {
 		color: white;
+		font-family: 'Proxima Nova';
+		font-size: 100px;
 	}
 	> div {
 		display: flex;
