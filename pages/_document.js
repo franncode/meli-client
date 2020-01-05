@@ -5,7 +5,6 @@ export default class customDocument extends Document {
 		return (
 			<Html lang='es'>
 				<Head>
-					<title>Mercado Libre</title>
 					<link
 						rel='shortcut icon'
 						type='image/png'
@@ -24,7 +23,7 @@ export default class customDocument extends Document {
 					/>
 
 					<meta property='og:title' content='Mercado Libre' />
-					<meta property='og:url' content='https://www.mercado-libre.now.sh' />
+					<meta property='og:url' content='https://www.mercadolibre.now.sh' />
 					<meta property='og:type' content='website' />
 					<meta property='og:site_name' content='Mercado Libre' />
 					<meta property='og:description' content='Mercado Libre' />

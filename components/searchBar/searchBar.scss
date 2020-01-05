@@ -1,0 +1,9 @@
+@import '../../public/styles/variables.scss';
+@import '../../public/styles/flex.scss';
+
+.searchBar {
+	height: 200px;
+	width: 100vw;
+	background-color: $color-primary;
+	@include flex();
+}

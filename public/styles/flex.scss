@@ -1,0 +1,10 @@
+@mixin flex($align: center, $justify: center, $direction: row) {
+	@if $align != center and $align != right {
+		@error "Property #{$align} must be either left or right.";
+	}
+
+	display: flex;
+	flex-direction: $direction;
+	align-items: $align;
+	justify-content: $justify;
+}
