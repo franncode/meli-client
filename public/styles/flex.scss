@@ -1,6 +1,52 @@
-@mixin flex($align: center, $justify: center, $direction: row) {
-	@if $align != center and $align != right {
-		@error "Property #{$align} must be either left or right.";
+@mixin flex($direction: row, $align: center, $justify: center, $wrap: nowrap) {
+	@if $direction !=
+		row and
+		$direction !=
+		row-reverse
+		and$direction !=
+		column
+		and$direction !=
+		column-reverse
+		and$direction !=
+		inherit
+		and$direction !=
+		initial
+		and$direction !=
+		unset
+	{
+		@error "Property #{$direction} must be row | row-reverse | column | column-reverse | inherit | initial | unset";
+	}
+
+	@if $align !=
+		flex-start and
+		$align !=
+		flex-end
+		and$align !=
+		center
+		and$align !=
+		baseline
+		and$align !=
+		stretch
+	{
+		@error "Property #{$align} must be flex-start | flex-end | center | baseline | stretch";
+	}
+
+	@if $justify !=
+		flex-start and
+		$justify !=
+		flex-end
+		and$justify !=
+		center
+		and$justify !=
+		baseline
+		and$justify !=
+		stretch
+	{
+		@error "Property #{$justify} must be flex-start | flex-end | center | baseline | stretch";
+	}
+
+	@if $wrap != nowrap and $wrap != wrap and$wrap != wrap-reverse {
+		@error "Property #{$wrap} must be nowrap | wrap | wrap-reverse";
 	}
 
 	display: flex;

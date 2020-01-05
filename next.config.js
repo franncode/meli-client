@@ -1,13 +1,7 @@
 const withPlugins = require('next-compose-plugins')
-const withSass = require('next-dart-sass')
+const withSass = require('@zeit/next-sass')
 const withOffline = require('next-offline')
 const { join } = require('path')
-
-// fix Sass compiler
-// const withCSS = require('@zeit/next-css')
-// module.exports = withCSS({})
-// const withSasss = require('@zeit/next-sass')
-// module.exports = withSasss({})
 
 const next_config = {
 	target: 'serverless'
@@ -18,8 +12,8 @@ const withSass_config = {
 	cssLoaderOptions: {
 		importLoaders: 1,
 		localIdentName: '[local]___[hash:base64:5]'
-	}
-	// postcssLoaderOptions: { autoprefixer: true }
+	},
+	postcssLoaderOptions: { autoprefixer: true }
 }
 
 const withOffline_config = {

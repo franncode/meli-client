@@ -1,7 +1,8 @@
-@use '../public/styles/fonts.scss' as *;
-@use '../public/styles/global.scss' as *;
-@use '../public/styles/variables.scss' as *;
-@use '../public/styles/flex.scss' as *;
+@import '../public/styles/global.scss';
+@import '../public/styles/variables.scss';
+@import '../public/styles/flex.scss';
+
+@import '../public/styles/fonts.scss';
 
 // .home {
 // 	width: 100vw;

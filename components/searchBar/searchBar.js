@@ -21,7 +21,7 @@ export const SearchBar = ({
 	return (
 		<header className={styles.searchBar} style={marginCalc(margin)}>
 			<div>
-				<img src='/images/logo.png' alt='search icon' />
+				<img src='/icons/logo.png' alt='search icon' />
 				<input
 					type='text'
 					name='searchInputText'

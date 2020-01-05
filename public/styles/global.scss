@@ -34,13 +34,12 @@ button {
 
 body {
 	display: flex;
-	max-width: 900px;
+	// max-width: 900px;
 	height: 100vh;
 	margin: auto;
 	padding: 0;
 	background-color: $color-grey-4;
 	overscroll-behavior: none;
-	// font-family: var(--font-family);
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 }

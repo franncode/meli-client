@@ -1,13 +1,9 @@
-@use '../../public/styles/variables.scss';
+@import '../../public/styles/variables.scss';
+@import '../../public/styles/flex.scss';
 
 .layout {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-items: center;
+	@include flex(column, center, flex-start);
 	min-height: 100vh;
-	// padding-bottom: 10px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 	overflow-x: hidden;
 	background-color: transparent;
 }
