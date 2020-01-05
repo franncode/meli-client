@@ -22,14 +22,17 @@ export const SearchBar = ({
 		<header className={styles.searchBar} style={marginCalc(margin)}>
 			<div>
 				<img src='/icons/logo.png' alt='search icon' />
-				<input
-					type='text'
-					name='searchInputText'
-					id={id}
-					value={value}
-					onChange={({ target }) => onChange(target.value)}
-					placeholder={placeholder}
-				/>
+				<label htmlFor={id}>
+					<input
+						type='text'
+						name='searchInputText'
+						id={id}
+						aria-label='searchInputText'
+						value={value}
+						onChange={({ target }) => onChange(target.value)}
+						placeholder={placeholder}
+					/>
+				</label>
 			</div>
 		</header>
 	)
