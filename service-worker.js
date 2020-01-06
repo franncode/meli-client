@@ -16,9 +16,9 @@ self.addEventListener('message', event => {
 self.__precacheManifest = [].concat(self.__precacheManifest || [])
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {})
 
-// const bgSyncPlugin = new workbox.backgroundSync.Plugin('send-data', {
-// 	maxRetentionTime: 24 * 60
-// })
+const bgSyncPlugin = new workbox.backgroundSync.Plugin('send-data', {
+	maxRetentionTime: 24 * 60
+})
 
 workbox.routing.registerRoute(
 	/^https:\/\/fonts\.googleapis\.com/,
@@ -81,10 +81,10 @@ workbox.routing.registerRoute(
 	})
 )
 
-// workbox.routing.registerRoute(
-// 	/\/api\/.*\/*.json/,
-// 	new workbox.strategies.NetworkOnly({
-// 		plugins: [bgSyncPlugin]
-// 	}),
-// 	'POST'
-// )
+workbox.routing.registerRoute(
+	/\/api\/.*\/*.json/,
+	new workbox.strategies.NetworkOnly({
+		plugins: [bgSyncPlugin]
+	}),
+	'POST'
+)
