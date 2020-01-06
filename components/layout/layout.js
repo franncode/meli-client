@@ -13,11 +13,11 @@ export const Layout = ({ id = 'layout', children }: Props) => {
 	const [searchText, setSearchText] = useState('')
 
 	return (
-		<section id={id} className={styles.layout}>
+		<div id={id} className={styles.layout}>
 			<Head />
 			<SearchBar value={searchText} onChange={setSearchText} />
 			<p>{searchText}</p>
-			{children}
-		</section>
+			<section>{children}</section>
+		</div>
 	)
 }

@@ -56,7 +56,7 @@ workbox.routing.registerRoute(
 )
 
 workbox.routing.registerRoute(
-	/(https:\/\/)?(api\.MISERVERENNOW.ross\.com.ar\/).*/,
+	/(https:\/\/)?(server-mercadolibre\.herokuapp\.com).*/,
 	new workbox.strategies.NetworkFirst({
 		cacheName: 'api-data',
 		cacheExpiration: {
@@ -80,6 +80,7 @@ workbox.routing.registerRoute(
 workbox.routing.registerRoute(
 	/\/api\/.*\/*.json/,
 	new workbox.strategies.NetworkOnly({
+		cacheName: 'send-data',
 		plugins: [bgSyncPlugin]
 	}),
 	'POST'

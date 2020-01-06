@@ -1,5 +1,11 @@
 {
 	"version": 2,
+	"builds": [
+		{
+			"src": "next.config.js",
+			"use": "@now/next"
+		}
+	],
 	"routes": [
 		{
 			"src": "^/service-worker.js$",
@@ -8,12 +14,6 @@
 				"cache-control": "public, max-age=43200, immutable",
 				"Service-Worker-Allowed": "/"
 			}
-		}
-	],
-	"builds": [
-		{
-			"src": "next.config.js",
-			"use": "@now/next"
 		}
 	]
 }

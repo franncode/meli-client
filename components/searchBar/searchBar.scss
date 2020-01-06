@@ -1,11 +1,10 @@
 @import '../../public/styles/variables.scss';
 @import '../../public/styles/displays.scss';
 
-// crear mixin para los widht y margins generales de todos los elementos
 .searchBar {
 	@include flex();
 	width: 100vw;
-	height: 54px;
+	height: $searchbar-height;
 	padding: 0 $column;
 	background-color: $color-primary;
 	> div {
@@ -13,12 +12,10 @@
 		@include flex();
 		max-width: $max-width;
 		height: 36px;
-		// background-color: red;
 		> img {
 			height: calc(100% - 4px);
 			margin-right: 18px;
 		}
-
 		> label {
 			flex: 1;
 			height: 100%;

@@ -4,7 +4,10 @@ const withOffline = require('next-offline')
 const { join } = require('path')
 
 const next_config = {
-	target: 'serverless'
+	target: 'serverless',
+	env: {
+		api: 'https://api.tuv.ross.com.ar/api/'
+	}
 }
 
 const withSass_config = {
