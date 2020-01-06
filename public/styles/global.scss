@@ -2,8 +2,7 @@
 
 html {
 	box-sizing: border-box;
-	background: red;
-	background-color: blue;
+	background: $color-primary;
 }
 
 *,
@@ -53,14 +52,21 @@ body {
 	height: 100vh;
 	margin: auto;
 	padding: 0;
-	// background-color: $color-grey-4;
-	background: rgb(255, 230, 0);
+	background: rgb(238, 238, 238);
 	background: linear-gradient(
 		180deg,
-		rgba(255, 230, 0, 1) 15%,
-		rgba(238, 238, 238, 1) 44%,
+		rgba(238, 238, 238, 1) 0%,
+		rgba(238, 238, 238, 1) 35%,
 		rgba(238, 238, 238, 1) 100%
 	);
+	// background: $color-grey-4;
+	// background: rgb(255, 230, 0);
+	// background: linear-gradient(
+	// 	180deg,
+	// 	rgba(255, 230, 0, 1) 15%,
+	// 	rgba(238, 238, 238, 1) 44%,
+	// 	rgba(238, 238, 238, 1) 100%
+	// );
 	overscroll-behavior: none;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
