@@ -6,7 +6,7 @@ const { join } = require('path')
 const next_config = {
 	target: 'serverless',
 	env: {
-		api: 'https://api.tuv.ross.com.ar/api/'
+		api: 'https://server-mercadolibre.herokuapp.com/api/'
 	}
 }
 

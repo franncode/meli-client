@@ -1,24 +1,32 @@
-// @flow
-import * as React from 'react'
+// @flowa
+import React, { useEffect } from 'react'
 import Link from 'next/link'
 import { useMargins } from '../../utils/hooks/useMargins'
 import styles from './searchBar.scss'
 
 type Props = {
 	id?: string,
-	value: string,
+	margins?: void | number | Array<number>,
 	onChange: function,
+	onSearch: function,
 	placeholder?: string,
-	margins?: void | number | Array<number>
+	value: string
 }
 
 export const SearchBar = ({
 	id = 'searchBar',
-	value,
+	margins,
 	onChange,
+	onSearch,
 	placeholder = 'Nunca dejes de buscar',
-	margins
+	value
 }: Props) => {
+	const onKeyDown = key => {
+		if (key === 'Enter') {
+			onSearch()
+		}
+	}
+
 	return (
 		<header className={styles.searchBar} style={useMargins(margins)}>
 			<div>
@@ -34,9 +42,10 @@ export const SearchBar = ({
 						value={value}
 						onChange={({ target }) => onChange(target.value)}
 						placeholder={placeholder}
+						onKeyDown={({ key }) => onKeyDown(key)}
 					/>
 				</label>
-				<div>
+				<div onClick={() => onSearch()}>
 					<img src='/icons/search.png' alt='search icon' />
 				</div>
 			</div>
