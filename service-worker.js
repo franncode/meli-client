@@ -16,6 +16,10 @@ self.addEventListener('message', event => {
 self.__precacheManifest = [].concat(self.__precacheManifest || [])
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {})
 
+const bgSyncPlugin = new workbox.backgroundSync.Plugin('send-data', {
+	maxRetentionTime: 24 * 60
+})
+
 workbox.routing.registerRoute(
 	/^https:\/\/fonts\.googleapis\.com/,
 	new workbox.strategies.CacheFirst({
@@ -57,10 +61,10 @@ workbox.routing.registerRoute(
 
 workbox.routing.registerRoute(
 	/(https:\/\/)?(server-mercadolibre\.herokuapp\.com).*/,
-	new workbox.strategies.NetworkFirst({
+	new workbox.strategies.StaleWhileRevalidate({
 		cacheName: 'api-data',
 		cacheExpiration: {
-			maxAgeSeconds: numberOfMonths(1)
+			maxAgeSeconds: numberOfMonths(0.25)
 		},
 		cacheableResponse: { statuses: [0, 200, 201, 204] }
 	})
@@ -80,7 +84,6 @@ workbox.routing.registerRoute(
 workbox.routing.registerRoute(
 	/\/api\/.*\/*.json/,
 	new workbox.strategies.NetworkOnly({
-		cacheName: 'send-data',
 		plugins: [bgSyncPlugin]
 	}),
 	'POST'
