@@ -21,7 +21,6 @@ export const Layout = ({ id = 'layout', children }: Props) => {
 		}
 	}
 
-	console.log('searchText', searchText)
 	return (
 		<div id={id} className={styles.layout}>
 			<Head />
