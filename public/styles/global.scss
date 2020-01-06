@@ -3,6 +3,7 @@
 html {
 	box-sizing: border-box;
 	background: red;
+	background-color: blue;
 }
 
 *,
@@ -49,7 +50,6 @@ button {
 
 body {
 	display: flex;
-	// max-width: 900px;
 	height: 100vh;
 	margin: auto;
 	padding: 0;
