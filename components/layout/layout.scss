@@ -1,5 +1,5 @@
 @import '../../public/styles/variables.scss';
-@import '../../public/styles/flex.scss';
+@import '../../public/styles/displays.scss';
 
 .layout {
 	@include flex(column, center, flex-start);

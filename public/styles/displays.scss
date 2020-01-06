@@ -54,3 +54,10 @@
 	align-items: $align;
 	justify-content: $justify;
 }
+
+@mixin grid {
+	grid-template-columns: 1fr repeat(12, 60px) 1fr;
+	grid-column-start: 3;
+	grid-template-rows: auto;
+	grid-template-areas: 'left left app app app app app app app app app app right right';
+}

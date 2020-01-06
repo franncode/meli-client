@@ -1,6 +1,7 @@
 // @flow
 import * as React from 'react'
-import { marginCalc } from '../../utils/marginCalc'
+import Link from 'next/link'
+import { useMargins } from '../../utils/hooks/useMargins'
 import styles from './searchBar.scss'
 
 type Props = {
@@ -8,20 +9,22 @@ type Props = {
 	value: string,
 	onChange: function,
 	placeholder?: string,
-	margin?: Array<number>
+	margins?: void | number | Array<number>
 }
 
 export const SearchBar = ({
 	id = 'searchBar',
 	value,
 	onChange,
-	placeholder,
-	margin
+	placeholder = 'Nunca dejes de buscar',
+	margins
 }: Props) => {
 	return (
-		<header className={styles.searchBar} style={marginCalc(margin)}>
+		<header className={styles.searchBar} style={useMargins(margins)}>
 			<div>
-				<img src='/icons/logo.png' alt='search icon' />
+				<Link href='/'>
+					<img src='/icons/logo.png' alt='search icon' />
+				</Link>
 				<label htmlFor={id}>
 					<input
 						type='text'
@@ -33,6 +36,9 @@ export const SearchBar = ({
 						placeholder={placeholder}
 					/>
 				</label>
+				<div>
+					<img src='/icons/search.png' alt='search icon' />
+				</div>
 			</div>
 		</header>
 	)

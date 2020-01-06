@@ -15,6 +15,10 @@ $font-size-l: 24px;
 $font-size-xl: 28px;
 $font-size-xxl: 46px;
 
+$font-weight-light: 200;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
 //MARGINS
 $margin-s: 16px;
 $margin-m: 32px;
@@ -23,7 +27,7 @@ $margin-m: 32px;
 $border-radius-s: 4px;
 
 // SIZES
-$max-width: calc($gutter * 9 + $column * 10);
+$max-width: 780px;
 
 // GRIDS
 $columns: 12;
