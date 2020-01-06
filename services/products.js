@@ -1,7 +1,11 @@
-import { useFetch } from '../utils/hooks/useFetch'
+import axios from 'axios'
+const api = process.env.api
 
-export const searchProduct = async searchText =>
-	await useFetch({
-		method: 'get',
-		url: `https://server-mercadolibre.herokuapp.com/api/items?q=${searchText}`
-	})
+export const searchProduct = async searchText => {
+	try {
+		const response = await axios.get(`${api}items?q=${searchText}`)
+		console.log('response', response)
+	} catch (error) {
+		console.error(error)
+	}
+}

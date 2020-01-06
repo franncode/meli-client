@@ -1,28 +1,6 @@
-// @flow
-// $FlowFixMe
-import dynamic from 'next/dynamic'
+import axios from 'axios'
 
-const deletes = dynamic(() => import('./useFecth/delete'))
-const get = dynamic(() => import('./useFecth/get'))
-const post = dynamic(() => import('./useFecth/post'))
-const put = dynamic(() => import('./useFecth/put'))
-
-type Params = {
-	method: string,
-	data: {
-		endpoint: string,
-		callback: function,
-		options: {}
-	}
-}
-
-type Return = {
-	statusCode?: Number,
-	error: boolean,
-	data?: {} | Array<{}>
-}
-
-export const useFetch = async (method: string, data: {}): Promise<Return> => {
+export const useFetch = async (method, data) => {
 	switch (method) {
 		case 'detele':
 			return await deletes(data)

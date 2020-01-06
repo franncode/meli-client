@@ -1,17 +1,7 @@
-// @flowa
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import Link from 'next/link'
 import { useMargins } from '../../utils/hooks/useMargins'
 import styles from './searchBar.scss'
-
-type Props = {
-	id?: string,
-	margins?: void | number | Array<number>,
-	onChange: function,
-	onSearch: function,
-	placeholder?: string,
-	value: string
-}
 
 export const SearchBar = ({
 	id = 'searchBar',
@@ -20,7 +10,7 @@ export const SearchBar = ({
 	onSearch,
 	placeholder = 'Nunca dejes de buscar',
 	value
-}: Props) => {
+}) => {
 	const onKeyDown = key => {
 		if (key === 'Enter') {
 			onSearch()

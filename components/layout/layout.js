@@ -1,19 +1,19 @@
-// @flow
-import React, { type Node, useState, useEffect } from 'react'
-// $FlowFixMe
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { Head } from '../head/head'
 import { SearchBar } from '../searchBar/searchBar'
 import styles from './layout.scss'
 
-type Props = {
-	id: string,
-	children: Node
-}
-
-export const Layout = ({ id = 'layout', children }: Props) => {
+export const Layout = ({ id = 'layout', children }) => {
 	const [searchText, setSearchText] = useState('')
 	const router = useRouter()
+
+	useEffect(() => {
+		if (router.pathname !== '/') {
+			const { search } = router.query
+			setSearchText(search)
+		}
+	})
 
 	const handleSearch = e => {
 		if (searchText !== '') {

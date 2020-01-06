@@ -1,7 +1,6 @@
-// @flow
 import { useMemo } from 'react'
 
-export const useMargins = (margins: void | number | Array<number>) => {
+export const useMargins = margins => {
 	return useMemo(() => {
 		switch (typeof margins) {
 			case 'undefined':
