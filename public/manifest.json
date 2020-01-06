@@ -1,10 +1,10 @@
 {
-	"name": "Downtube",
-	"short_name": "Downtube",
-	"description": "Video downloader",
+	"name": "Mercado Libre",
+	"short_name": "Mercado Libre",
+	"description": "Compra y vende lo que quieras",
 	"start_url": "/",
-	"background_color": "#d32f2f",
-	"theme_color": "#d32f2f",
+	"background_color": "#eeeeee",
+	"theme_color": "#ffe600",
 	"display": "standalone",
 	"orientation": "portrait",
 	"icons": [
