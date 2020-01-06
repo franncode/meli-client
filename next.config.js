@@ -26,6 +26,8 @@ const withOffline_config = {
 	}
 }
 
+console.log('__dirname', __dirname)
+
 module.exports = withPlugins(
 	[
 		[withOffline, withOffline_config],
