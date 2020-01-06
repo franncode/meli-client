@@ -2,6 +2,7 @@
 
 html {
 	box-sizing: border-box;
+	background-color: red;
 }
 
 *,
@@ -57,7 +58,7 @@ body {
 	background: linear-gradient(
 		180deg,
 		rgba(255, 230, 0, 1) 15%,
-		rgba(238, 238, 238, 1) 33%,
+		rgba(238, 238, 238, 1) 44%,
 		rgba(238, 238, 238, 1) 100%
 	);
 	overscroll-behavior: none;
