@@ -48,5 +48,14 @@
 	}
 }
 
-// 30
-// 40
+@media (max-width: 427px) {
+	.searchBar {
+		padding: 0 ($column / 2);
+	}
+}
+
+@media (max-width: 366px) {
+	.searchBar {
+		padding: 0 ($column / 4);
+	}
+}
