@@ -22,11 +22,10 @@ const withSass_config = {
 const withOffline_config = {
 	generateSw: false,
 	workboxOpts: {
-		swSrc: join(__dirname, 'service-worker.js')
+		swSrc: join(__dirname, 'service-worker.js'),
+		swDest: 'static/service-worker.js'
 	}
 }
-
-console.log('__dirname', __dirname)
 
 module.exports = withPlugins(
 	[
