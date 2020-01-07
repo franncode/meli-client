@@ -2,8 +2,6 @@ import styles from './index.scss'
 import { searchProduct } from '../../services/products'
 
 export default function Results({ search, results }) {
-	console.log('results', results)
-
 	return (
 		<div className={styles.home}>
 			estas buscando <p>{search}</p>
