@@ -1,4 +1,4 @@
-const styles = require('resultPath.scss')
+const styles = require('./resultPath.scss')
 
 type Props = {
 	price: string
@@ -7,15 +7,6 @@ type Props = {
 	locate: string
 }
 
-export const resultPath = ({ price, description, locate, img }: Props) => {
-	return (
-		<div className={styles.resultPath}>
-			<img src={img} alt={`imagen del producto ${description}`} />
-			<div>
-				<h3>{price}</h3>
-				<h4>{description}</h4>
-			</div>
-			<p>{locate}</p>
-		</div>
-	)
+export const ResultPath = (props: Props) => {
+	return <div className={styles.resultPath}></div>
 }

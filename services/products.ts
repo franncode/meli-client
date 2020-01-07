@@ -1,10 +1,26 @@
-import axios from 'axios'
+import axios, { AxiosResponse } from 'axios'
+import { Item } from './schemas'
 const api = process.env.api
 
-export const searchProduct = async (searchText: string) => {
+type SearchProductData = {
+	author: {
+		name: string
+		lastname: string
+	}
+	categories: string[]
+	items: Item[]
+}
+
+interface SearchProductReturn extends AxiosResponse {
+	data: SearchProductData
+}
+
+export const searchProduct = async (
+	searchText: string
+): Promise<SearchProductReturn> => {
 	try {
 		const response = await axios.get(`${api}items?q=${searchText}`)
-		console.log('response', response)
+		return response
 	} catch (error) {
 		console.error(error)
 	}

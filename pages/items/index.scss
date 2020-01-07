@@ -1,0 +1,22 @@
+@import '../../public/styles/variables.scss';
+@import '../../public/styles/displays.scss';
+
+.results {
+	flex-shrink: 1;
+	width: $max-width;
+	// max-width: $max-width;
+	margin-top: 20px;
+	@include flex(column, flex-start, flex-start);
+	background-color: white;
+	border-radius: $border-radius-s;
+}
+
+.divider {
+	align-self: center;
+	height: 1px;
+	width: calc(100% - #{$margin-s} * 2 * 1.25);
+	margin: 0;
+	padding: 0;
+	border: none;
+	background-color: $color-grey-4;
+}
