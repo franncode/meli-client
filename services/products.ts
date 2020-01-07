@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from 'axios'
-import { Item } from './schemas'
+import { Item } from './interfaces'
 const api = process.env.api
 
 type SearchProductData = {
