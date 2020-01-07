@@ -7,6 +7,9 @@
 	"browserslist": [
 		"defaults"
 	],
+	"engines": {
+		"node": "12.x"
+	},
 	"scripts": {
 		"audit": "lighthouse https://www.mercadolibre.now.sh --view",
 		"build": "next build",
