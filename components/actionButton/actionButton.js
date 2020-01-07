@@ -15,7 +15,6 @@ export const ActionButton = ({
 			style={marginCalc(margin)}
 			onClick={e => onClick(e)}
 		>
-			{icon && <img src={icon} alt='icon button' />}
 			{text}
 		</button>
 	)

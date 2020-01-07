@@ -21,7 +21,7 @@ export const SearchBar = ({
 		<header className={styles.searchBar} style={useMargins(margins)}>
 			<div>
 				<Link href='/'>
-					<img src='/icons/logo.png' alt='search icon' />
+					<img src={require('../../public/icons/logo.png')} alt='search icon' />
 				</Link>
 				<label htmlFor={id}>
 					<input
@@ -36,7 +36,10 @@ export const SearchBar = ({
 					/>
 				</label>
 				<div onClick={() => onSearch()}>
-					<img src='/icons/search.png' alt='search icon' />
+					<img
+						src={require('../../public/icons/search.png')}
+						alt='search icon'
+					/>
 				</div>
 			</div>
 		</header>

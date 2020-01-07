@@ -1,4 +1,5 @@
 const withPlugins = require('next-compose-plugins')
+const withOptimizedImages = require('next-optimized-images')
 const withSass = require('@zeit/next-sass')
 const withOffline = require('next-offline')
 const { join } = require('path')
@@ -29,8 +30,9 @@ const withOffline_config = {
 
 module.exports = withPlugins(
 	[
-		[withOffline, withOffline_config],
-		[withSass, withSass_config]
+		[withOptimizedImages, {}],
+		[withSass, withSass_config],
+		[(withOffline, withOffline_config)]
 	],
 	next_config
 )
