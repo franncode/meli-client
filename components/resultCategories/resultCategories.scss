@@ -3,7 +3,7 @@
 
 .resultCategories {
 	@include flex(row, center, flex-start, wrap);
-	// background-color: transparent;
+	max-width: $max-width;
 	margin: $margin-s 0;
 	> p {
 		font-size: $font-size-xs;

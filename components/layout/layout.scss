@@ -4,7 +4,9 @@
 .layout {
 	@include flex(column, center, flex-start);
 	width: 100%;
+	max-width: 900px;
 	min-height: 100vh;
+	margin: auto;
 	overflow-x: hidden;
 	// background-color: $color-grey-4;
 	background: rgb(255, 230, 0);

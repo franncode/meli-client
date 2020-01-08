@@ -4,9 +4,7 @@
 .searchBar {
 	@include flex();
 	width: 100%;
-	flex-shrink: 1;
 	height: $searchbar-height;
-	padding: 0 $column;
 	background-color: $color-primary;
 	> div {
 		flex: 1;
@@ -47,14 +45,24 @@
 	}
 }
 
-@media (max-width: 427px) {
-	.searchBar {
-		padding: 0 ($column / 2);
+@media (max-width: 810px) {
+	.searchBar > div {
+		margin: 0 ($column / 2);
 	}
 }
 
-@media (max-width: 366px) {
+@media (max-width: 368px) {
+	.searchBar > div {
+		margin: 0 ($column / 4);
+	}
+}
+
+@media (max-width: 337px) {
 	.searchBar {
-		padding: 0 ($column / 4);
+		> div {
+			> img {
+				display: none;
+			}
+		}
 	}
 }
