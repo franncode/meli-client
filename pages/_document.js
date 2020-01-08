@@ -5,6 +5,13 @@ export default class customDocument extends Document {
 		return (
 			<Html lang='es'>
 				<Head>
+					<style>
+						{`
+					#__next {
+						flex: 1;
+					}
+					`}
+					</style>
 					<link
 						rel='shortcut icon'
 						type='image/png'

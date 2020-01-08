@@ -1,0 +1,6 @@
+@import '../../public/styles/variables.scss';
+@import '../../public/styles/displays.scss';
+
+.resultCategories {
+	@include flex();
+}

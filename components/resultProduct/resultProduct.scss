@@ -17,9 +17,14 @@
 			@include flex(row, center, flex-start);
 			margin-bottom: $margin-m;
 			> h3 {
+				@include flex(row, flex-start, flex-start);
 				font-weight: $font-weight-normal;
 				font-size: $font-size-l;
 				margin-right: $margin-s;
+				> span {
+					font-size: $font-size-xxs;
+					margin: 3.8px 0 0 3px;
+				}
 			}
 			> img {
 				height: 28px;
@@ -32,7 +37,7 @@
 		}
 	}
 	> p {
-		margin-left: $column * 1.5;
+		margin: 0 $column 0 auto;
 		font-weight: $font-weight-light;
 		font-size: $font-size-xxs;
 	}

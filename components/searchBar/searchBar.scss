@@ -3,7 +3,8 @@
 
 .searchBar {
 	@include flex();
-	width: 100vw;
+	width: 100%;
+	flex-shrink: 1;
 	height: $searchbar-height;
 	padding: 0 $column;
 	background-color: $color-primary;
@@ -38,6 +39,7 @@
 			width: 36px;
 			border-radius: 0 $border-radius-s $border-radius-s 0;
 			background-color: $color-grey-4;
+			cursor: pointer;
 			> img {
 				height: 18px;
 			}

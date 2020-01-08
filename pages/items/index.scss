@@ -5,7 +5,7 @@
 	flex-shrink: 1;
 	width: $max-width;
 	// max-width: $max-width;
-	margin-top: 20px;
+	margin: 20px 0;
 	@include flex(column, flex-start, flex-start);
 	background-color: white;
 	border-radius: $border-radius-s;
