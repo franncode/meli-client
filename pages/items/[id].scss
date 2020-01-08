@@ -25,6 +25,7 @@
 					@include flex(row, flex-start, flex-start);
 					margin-top: $margin-m;
 					font-size: $font-size-xxl;
+					font-weight: $font-weight-normal;
 					> span {
 						font-size: $font-size-m;
 						margin: $margin-m / 4 0 0 4px;
