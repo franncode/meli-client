@@ -14,8 +14,10 @@ export const Layout = ({ id = 'layout', children }: Props) => {
 	const router = useRouter()
 
 	useEffect(() => {
-		if (router.pathname !== '/') setSearchText(router.query.search)
-	}, [])
+		if (router.pathname !== '/' && router.query.search)
+			setSearchText(router.query.search)
+		else setSearchText('')
+	}, [router.pathname])
 
 	const handleSearch = () => {
 		if (searchText !== '') {
