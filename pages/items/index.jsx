@@ -1,16 +1,16 @@
 import { Fragment, useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
+import { useRouter } from 'next/router'
 import { searchProduct } from '../../services/products'
-import { PageButton } from '../../components/pageButton/pageButton'
+import { FilterButton } from '../../components/filterButton/filterButton'
 const ResultProduct = dynamic(() =>
 	import('../../components/resultProduct/resultProduct')
 )
-const ResultPath = dynamic(() =>
-	import('../../components/resultCategories/resultCategories')
-)
+const PathBar = dynamic(() => import('../../components/pathBar/pathBar'))
 import styles from './index.scss'
 
 export default function Items({ search, setLoading }) {
+	const router = useRouter()
 	const [categories, setCategories] = useState([])
 	const [items, setItems] = useState([])
 	const [filteredItems, setFilteredItems] = useState([])
@@ -20,11 +20,15 @@ export default function Items({ search, setLoading }) {
 		if (search && search !== '') {
 			setLoading({ loading: true })
 			const makeSearch = async () => {
-				const { data } = await searchProduct(search)
-				setCategories(data.categories)
-				setItems(data.items)
-				setFilteredItems(data.items)
-				setLoading({ loading: false })
+				try {
+					const { data } = await searchProduct(search)
+					setCategories(data.categories)
+					setItems(data.items)
+					setFilteredItems(data.items)
+					setLoading({ loading: false })
+				} catch (error) {
+					router.push('/_error')
+				}
 			}
 			makeSearch()
 		}
@@ -43,8 +47,10 @@ export default function Items({ search, setLoading }) {
 
 	return (
 		<div className={styles.results}>
-			{categories.length > 0 && <ResultPath categories={categories} />}
-			<PageButton
+			{categories.length > 0 && (
+				<PathBar type={'categories'} categories={categories} />
+			)}
+			<FilterButton
 				text='Envio gratis'
 				isOn={isFreeShippingFilterOn}
 				onSwtich={handleSwitch}
@@ -52,9 +58,10 @@ export default function Items({ search, setLoading }) {
 			<div>
 				{items.length > 0 &&
 					filteredItems.map(
-						({ price, title, city, picture, free_shipping }, index) => (
+						({ id, price, title, city, picture, free_shipping }, index) => (
 							<Fragment key={index}>
 								<ResultProduct
+									id={id}
 									price={price}
 									description={title}
 									locate={city}

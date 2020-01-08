@@ -1,10 +1,18 @@
-function Error({ statusCode }) {
+import styles from './_error.scss'
+
+const Error = ({
+	statusCode,
+	text = 'Parace que quieres acceder a una pagina que no existe'
+}) => {
 	return (
-		<p>
-			{statusCode
-				? `An error ${statusCode} occurred on server`
-				: 'An error occurred on client'}
-		</p>
+		<div className={styles.error}>
+			<img src='/images/woman.svg' alt='woman with magnifying glass' />
+			<p>
+				{!text && statusCode
+					? `Ups! Parece que se ha generado un error ${statusCode} en nuestro servidor...`
+					: 'Ups! Parece que se ha generado un error...'}
+			</p>
+		</div>
 	)
 }
 

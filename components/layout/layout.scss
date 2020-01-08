@@ -4,18 +4,18 @@
 .layout {
 	@include flex(column, center, flex-start);
 	width: 100%;
-	max-width: 900px;
+	max-width: $max-width;
 	min-height: 100vh;
 	margin: auto;
 	overflow-x: hidden;
 	// background-color: $color-grey-4;
-	background: rgb(255, 230, 0);
-	background: linear-gradient(
-		180deg,
-		rgba(255, 230, 0, 1) 0%,
-		rgba(238, 238, 238, 1) 40%,
-		rgba(238, 238, 238, 1) 100%
-	);
+	// background: rgb(255, 230, 0);
+	// background: linear-gradient(
+	// 	180deg,
+	// 	rgba(255, 230, 0, 1) 0%,
+	// 	rgba(238, 238, 238, 1) 40%,
+	// 	rgba(238, 238, 238, 1) 100%
+	// );
 	overscroll-behavior: none;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;

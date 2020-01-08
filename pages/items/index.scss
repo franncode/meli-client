@@ -3,9 +3,7 @@
 
 .results {
 	> div:last-child {
-		flex-shrink: 1;
 		width: $max-width;
-		// max-width: $max-width;
 		margin: 0 0 20px 0;
 		@include flex(column, flex-start, flex-start);
 		background-color: white;

@@ -2,50 +2,68 @@
 	@if $direction !=
 		row and
 		$direction !=
-		row-reverse
-		and$direction !=
-		column
-		and$direction !=
-		column-reverse
-		and$direction !=
-		inherit
-		and$direction !=
-		initial
-		and$direction !=
+		row-reverse and
+		$direction !=
+		column and
+		$direction !=
+		column-reverse and
+		$direction !=
+		inherit and
+		$direction !=
+		initial and
+		$direction !=
 		unset
 	{
 		@error "Property #{$direction} must be row | row-reverse | column | column-reverse | inherit | initial | unset";
 	}
 
 	@if $align !=
+		stretch and
+		$align !=
 		flex-start and
 		$align !=
-		flex-end
-		and$align !=
-		center
-		and$align !=
-		baseline
-		and$align !=
-		stretch
+		flex-end and
+		$align !=
+		center and
+		$align !=
+		baseline and
+		$align !=
+		start and
+		$align !=
+		end and
+		$align !=
+		self-start and
+		$align !=
+		self-end
 	{
-		@error "Property #{$align} must be flex-start | flex-end | center | baseline | stretch";
+		@error "Property #{$align} must be stretch | flex-start | flex-end | center | baseline | start | end | self-start | self-end";
 	}
 
 	@if $justify !=
 		flex-start and
 		$justify !=
-		flex-end
-		and$justify !=
-		center
-		and$justify !=
-		baseline
-		and$justify !=
-		stretch
+		flex-end and
+		$justify !=
+		center and
+		$justify !=
+		space-between and
+		$justify !=
+		space-around and
+		$justify !=
+		space-evenly and
+		$justify !=
+		start and
+		$justify !=
+		end and
+		$justify !=
+		left and
+		$justify !=
+		right
 	{
-		@error "Property #{$justify} must be flex-start | flex-end | center | baseline | stretch";
+		@error "Property #{$justify} must be flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right";
 	}
 
-	@if $wrap != nowrap and $wrap != wrap and$wrap != wrap-reverse {
+	@if $wrap != nowrap and $wrap != wrap and $wrap != wrap-reverse {
 		@error "Property #{$wrap} must be nowrap | wrap | wrap-reverse";
 	}
 
