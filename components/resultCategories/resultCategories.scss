@@ -2,5 +2,10 @@
 @import '../../public/styles/displays.scss';
 
 .resultCategories {
-	@include flex();
+	@include flex(row, center, flex-start, wrap);
+	// background-color: transparent;
+	margin: $margin-s 0;
+	> p {
+		font-size: $font-size-xs;
+	}
 }

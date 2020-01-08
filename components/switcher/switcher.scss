@@ -1,0 +1,41 @@
+@import '../../public/styles/variables.scss';
+@import '../../public/styles/displays.scss';
+
+.switcher_off {
+	@include flex(row, center, flex-start);
+	height: 22px;
+	width: 41px;
+	background-color: $color-grey-3;
+	border-radius: 11px;
+	cursor: pointer;
+	> img {
+		margin-left: 3px;
+		animation: translate_to_off 0.25s ease-in-out 1 normal forwards;
+	}
+}
+.switcher_on {
+	@extend .switcher_off;
+	background-color: $color-secondary;
+	> img {
+		margin-right: 3px;
+		animation: translate_to_on 0.25s ease-in-out 1 normal forwards;
+	}
+}
+
+@keyframes translate_to_on {
+	from {
+		transform: translateX(0px);
+	}
+	to {
+		transform: translateX(19px);
+	}
+}
+
+@keyframes translate_to_off {
+	from {
+		transform: translateX(19px);
+	}
+	to {
+		transform: translateX(0px);
+	}
+}
