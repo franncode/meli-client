@@ -4,34 +4,15 @@ import { useRouter } from 'next/router'
 // import { Head } from '../../components/head/head'
 import { searchProduct } from '../../services/products'
 import { FilterButton } from '../../components/filterButton/filterButton'
+import PathBar from '../../components/pathBar/pathBar'
 const ResultProduct = dynamic(() =>
 	import('../../components/resultProduct/resultProduct')
 )
-const PathBar = dynamic(() => import('../../components/pathBar/pathBar'))
 import styles from './index.scss'
 
-export default function Items({ search }) {
-	const router = useRouter()
-	const [categories, setCategories] = useState([])
-	const [items, setItems] = useState([])
+export default function Items({ categories, items }) {
 	const [filteredItems, setFilteredItems] = useState([])
 	const [isFreeShippingFilterOn, setIsFreeShippingFilterOn] = useState(false)
-
-	useEffect(() => {
-		if (search && search !== '') {
-			const makeSearch = async () => {
-				try {
-					const { data } = await searchProduct(search)
-					setCategories(data.categories)
-					setItems(data.items)
-					setFilteredItems(data.items)
-				} catch (error) {
-					router.push('/_error')
-				}
-			}
-			makeSearch()
-		}
-	}, [search])
 
 	useEffect(() => {
 		if (isFreeShippingFilterOn) {
@@ -47,9 +28,9 @@ export default function Items({ search }) {
 	return (
 		<div className={styles.results}>
 			{/* <Head title={`${search} en Mercado Libre`} /> */}
-			{categories.length > 0 && (
-				<PathBar type={'categories'} categories={categories} />
-			)}
+
+			<PathBar type={'categories'} categories={categories} />
+
 			<FilterButton
 				text='Envio gratis'
 				isOn={isFreeShippingFilterOn}
@@ -86,4 +67,15 @@ export default function Items({ search }) {
 	)
 }
 
-Items.getInitialProps = async ({ query }) => ({ search: query.search })
+Items.getInitialProps = async ({ res, query }) => {
+	try {
+		const { data } = await searchProduct(query.search)
+		const { categories, items } = data
+		return { categories, items }
+	} catch (error) {
+		res.writeHead(302, {
+			Location: '/_error'
+		})
+		res.end()
+	}
+}

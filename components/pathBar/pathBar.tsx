@@ -6,16 +6,16 @@ type Props = {
 }
 
 export const PathBar = ({ type, categories }: Props) => {
+	const limitCategories = categories.filter((category, index) => index < 5)
+
 	return (
 		<div className={styles.pathBar}>
 			{type === 'categories' &&
-				categories
-					.filter((category, index) => index < 5)
-					.map((category, index) => {
-						if (index !== 4) {
-							return <p key={index}>{`${category} -\u00A0`}</p>
-						} else return <p key={index}>{`${category}`}</p>
-					})}
+				limitCategories.map((category, index) => {
+					if (index !== 4 && index !== limitCategories.length - 1) {
+						return <p key={index}>{`${category} -\u00A0`}</p>
+					} else return <p key={index}>{`${category}`}</p>
+				})}
 			{type === 'path' &&
 				categories.map((category, index) => {
 					if (index !== categories.length - 1) {

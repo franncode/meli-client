@@ -4,8 +4,23 @@ import PathBar from '../../../components/pathBar/pathBar'
 import { Head } from '../../../components/head/head'
 import { ImageProduct } from '../../../components/imageProduct/imageProduct'
 import { getProductById } from '../../../services/products'
-import { useEffect } from 'react'
 const styles = require('./index.scss')
+
+type Props = {
+	id: string
+	title: string
+	price: {
+		currency: string
+		amount: number
+		decimals: number
+	}
+	picture: string
+	condition: 'new' | 'used'
+	freeShipping: boolean
+	soldQuantity: number
+	description: string
+	categories: string[]
+}
 
 export default function Item({
 	id,
@@ -17,7 +32,7 @@ export default function Item({
 	soldQuantity,
 	description,
 	categories
-}) {
+}: Props) {
 	const router = useRouter()
 
 	const formatedCondition = () => {
@@ -48,9 +63,13 @@ export default function Item({
 				title={`${title} - ${wholePart} ${decimalPart} en Mercado Libre`}
 				openGraph={openGraph}
 			/>
-			<PathBar type={'path'} categories={categories} />
-			<div>
-				<div className={styles.main}>
+			<div className={styles.topBar}>
+				<p onClick={() => router.back()}>Volver al listado</p>
+				<strong>|</strong>
+				<PathBar type={'path'} categories={categories} />
+			</div>
+			<div className={styles.body}>
+				<div className={styles.upperPart}>
 					<ImageProduct picture={picture} />
 					<div>
 						<p>{`${formatedCondition()} - ${formatedSoldQuantity}`}</p>
@@ -62,7 +81,7 @@ export default function Item({
 						<button>Comprar</button>
 					</div>
 				</div>
-				<div className={styles.description}>
+				<div className={styles.bottomPart}>
 					<h3>Descripción del producto</h3>
 					<pre>{description}</pre>
 				</div>

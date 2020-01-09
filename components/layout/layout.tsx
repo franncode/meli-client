@@ -31,8 +31,9 @@ export const Layout = ({
 				break
 
 			default:
+				console.log('entre')
+
 				setSearchText('')
-				setHeadTitle('Mercado Libre')
 				break
 		}
 	}, [router.pathname])

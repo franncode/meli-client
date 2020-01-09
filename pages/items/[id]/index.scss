@@ -1,62 +1,79 @@
 @import '../../../public/styles/variables.scss';
 @import '../../../public/styles/displays.scss';
 
-.item {
-	> div:last-child {
-		width: $max-width;
-		margin: 0 0 20px 0;
-		@include flex(column, flex-start, flex-start);
-		background-color: white;
-		border-radius: $border-radius-s;
-		.main {
-			@include flex(row, flex-start, flex-start);
-			> div {
-				margin-right: $margin-m;
-				> p {
-					margin-top: $margin-m;
-					font-size: $font-size-xs;
-				}
-				> h2 {
-					margin-top: $margin-s;
-					font-size: $font-size-l;
-					font-weight: $font-weight-normal;
-				}
-				> h1 {
-					@include flex(row, flex-start, flex-start);
-					margin-top: $margin-m;
-					font-size: $font-size-xxl;
-					font-weight: $font-weight-normal;
-					> span {
-						font-size: $font-size-m;
-						margin: $margin-m / 4 0 0 4px;
-					}
-				}
-				> button {
-					width: calc(100%);
-					padding: 12px;
-					margin-top: $margin-m;
-					border: none;
-					border-radius: $border-radius-s;
-					color: white;
-					background-color: $color-secondary;
-					font-size: $font-size-s;
-					cursor: pointer;
-					outline: 0;
-				}
-			}
+.topBar {
+	@include flex(row, center, flex-start);
+	> p {
+		font-size: $font-size-xs;
+		cursor: pointer;
+		&:active,
+		&:hover {
+			color: $color-secondary;
 		}
-		> .description {
-			padding: 0 $margin-m $margin-m $margin-m;
-			> h3 {
+	}
+	> strong {
+		font-size: $font-size-xs;
+		font-weight: $font-weight-light;
+		margin: 0 $margin-s;
+		color: $color-grey-3;
+	}
+}
+
+.body {
+	width: $max-width;
+	margin: 0 0 20px 0;
+	@include flex(column, flex-start, flex-start);
+	background-color: white;
+	border-radius: $border-radius-s;
+	.upperPart {
+		@include flex(row, flex-start, flex-start);
+		> div {
+			margin-right: $margin-m;
+			> p {
 				margin-top: $margin-m;
-				font-size: $font-size-xl;
+				font-size: $font-size-xs;
+			}
+			> h2 {
+				margin-top: $margin-s;
+				font-size: $font-size-l;
 				font-weight: $font-weight-normal;
 			}
-			> pre {
+			> h1 {
+				@include flex(row, flex-start, flex-start);
 				margin-top: $margin-m;
-				font-size: $font-size-s;
-				color: $color-grey-3;
+				font-size: $font-size-xxl;
+				font-weight: $font-weight-normal;
+				> span {
+					font-size: $font-size-m;
+					margin: $margin-m / 4 0 0 4px;
+				}
 			}
+			> button {
+				width: calc(100%);
+				padding: 12px;
+				margin-top: $margin-m;
+				border: none;
+				border-radius: $border-radius-s;
+				color: white;
+				background-color: $color-secondary;
+				font-size: $font-size-s;
+				cursor: pointer;
+				outline: 0;
+			}
+		}
+	}
+	> .bottomPart {
+		padding: 0 $margin-m $margin-m $margin-m;
+		> h3 {
+			margin-top: $margin-m;
+			font-size: $font-size-xl;
+			font-weight: $font-weight-normal;
+		}
+		> pre {
+			margin-top: $margin-m;
+			font-size: $font-size-s;
+
+			color: $color-grey-3;
 		}
 	}
 }
