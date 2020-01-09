@@ -2,7 +2,8 @@
 
 html {
 	box-sizing: border-box;
-	background: $color-primary;
+	// background: $color-primary;
+	background: $color-grey-4;
 }
 
 *,
@@ -28,6 +29,7 @@ input::placeholder {
 	color: $color-grey-3;
 }
 
+pre,
 ul,
 li,
 h1,
@@ -53,6 +55,7 @@ body {
 	width: 100vw;
 	margin: auto;
 	padding: 0;
+	overflow-x: hidden;
 	background: rgb(238, 238, 238);
 	background: linear-gradient(
 		180deg,

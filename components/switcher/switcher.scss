@@ -10,10 +10,12 @@
 	cursor: pointer;
 	transition: all 0.25s ease-out;
 	> img {
+		user-select: none;
 		margin-left: 3px;
 		animation: translate_to_off 0.25s ease-in-out 1 normal forwards;
 	}
 }
+
 .switcher_on {
 	@extend .switcher_off;
 	background-color: $color-secondary;

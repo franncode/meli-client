@@ -27,11 +27,12 @@
 		"prod": "npm run build && npm run start",
 		"start": "next start",
 		"test": "jest",
-		"test:watch": "jest --watch"
+		"test:watch": "jest --watch",
+		"test:coverage": "jest --coverage",
+		"test:snapshot": "jest --updateSnapshot"
 	},
 	"dependencies": {
 		"axios": "^0.19.0",
-		"isomorphic-unfetch": "^3.0.0",
 		"next": "9.1.5",
 		"react": "16.12.0",
 		"react-dom": "16.12.0"

@@ -2,7 +2,7 @@ import React from 'react'
 import App from 'next/app'
 import dynamic from 'next/dynamic'
 import { Layout } from '../components/layout/layout'
-const Loader = dynamic(() => import('../components/loader/loader'))
+// const Loader = dynamic(() => import('../components/loader/loader'))
 
 class MyApp extends App {
 	state = {
@@ -25,7 +25,7 @@ class MyApp extends App {
 		const { Component, pageProps } = this.props
 		return (
 			<Layout loading={this.state.loading}>
-				{this.state.loading && <Loader />}
+				{/* {this.state.loading && <Loader />} */}
 				<Component
 					{...pageProps}
 					setAlert={alert => this.setAlert(alert)}
