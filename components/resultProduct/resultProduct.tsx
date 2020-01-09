@@ -35,7 +35,9 @@ const ResultProduct = ({
 							{wholePart}
 							<span>{decimalPart}</span>
 						</h3>
-						{freeShipping && <img src='/icons/shipping.png' alt='' />}
+						{freeShipping && (
+							<img src='/icons/shipping.png' alt='free shipping icon' />
+						)}
 					</div>
 					<h4>{description}</h4>
 				</div>

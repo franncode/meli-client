@@ -1,6 +1,7 @@
 import { Fragment, useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
+// import { Head } from '../../components/head/head'
 import { searchProduct } from '../../services/products'
 import { FilterButton } from '../../components/filterButton/filterButton'
 const ResultProduct = dynamic(() =>
@@ -9,7 +10,7 @@ const ResultProduct = dynamic(() =>
 const PathBar = dynamic(() => import('../../components/pathBar/pathBar'))
 import styles from './index.scss'
 
-export default function Items({ search, setLoading }) {
+export default function Items({ search }) {
 	const router = useRouter()
 	const [categories, setCategories] = useState([])
 	const [items, setItems] = useState([])
@@ -18,14 +19,12 @@ export default function Items({ search, setLoading }) {
 
 	useEffect(() => {
 		if (search && search !== '') {
-			setLoading({ loading: true })
 			const makeSearch = async () => {
 				try {
 					const { data } = await searchProduct(search)
 					setCategories(data.categories)
 					setItems(data.items)
 					setFilteredItems(data.items)
-					setLoading({ loading: false })
 				} catch (error) {
 					router.push('/_error')
 				}
@@ -47,6 +46,7 @@ export default function Items({ search, setLoading }) {
 
 	return (
 		<div className={styles.results}>
+			{/* <Head title={`${search} en Mercado Libre`} /> */}
 			{categories.length > 0 && (
 				<PathBar type={'categories'} categories={categories} />
 			)}

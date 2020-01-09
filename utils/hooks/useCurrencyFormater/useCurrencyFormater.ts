@@ -13,10 +13,10 @@ type PriceFormated = {
 
 export const useCurrencyFormater = (
 	price: Price,
-	testFunction?: Function
+	testFunction?: Function | false
 ): PriceFormated => {
 	return useMemo(() => {
-		testFunction()
+		testFunction && testFunction()
 		const formatWholePart = () => {
 			let amountDigits = String(price.amount).split('')
 			if (amountDigits.length < 4) {

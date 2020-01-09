@@ -1,7 +1,10 @@
+import { useRouter } from 'next/router'
 import { useCurrencyFormater } from '../../../utils/hooks/useCurrencyFormater/useCurrencyFormater'
 import PathBar from '../../../components/pathBar/pathBar'
+import { Head } from '../../../components/head/head'
 import { ImageProduct } from '../../../components/imageProduct/imageProduct'
 import { getProductById } from '../../../services/products'
+import { useEffect } from 'react'
 const styles = require('./index.scss')
 
 export default function Item({
@@ -15,6 +18,8 @@ export default function Item({
 	description,
 	categories
 }) {
+	const router = useRouter()
+
 	const formatedCondition = () => {
 		switch (condition) {
 			case 'new':
@@ -31,8 +36,18 @@ export default function Item({
 
 	const { wholePart, decimalPart } = useCurrencyFormater(price)
 
+	const openGraph = {
+		description,
+		picture,
+		link: router.asPath
+	}
+
 	return (
 		<div className={styles.item}>
+			<Head
+				title={`${title} - ${wholePart} ${decimalPart} en Mercado Libre`}
+				openGraph={openGraph}
+			/>
 			<PathBar type={'path'} categories={categories} />
 			<div>
 				<div className={styles.main}>

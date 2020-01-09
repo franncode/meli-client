@@ -1,35 +1,23 @@
 import React from 'react'
 import App from 'next/app'
-import dynamic from 'next/dynamic'
 import { Layout } from '../components/layout/layout'
-// const Loader = dynamic(() => import('../components/loader/loader'))
 
 class MyApp extends App {
 	state = {
-		alert: {
-			show: false,
-			message: ''
-		},
-		loading: false
+		title: 'Mercado Libre'
 	}
 
-	setAlert({ message, show }) {
-		this.setState(state => ({ ...state, alert: { message, show } }))
-	}
-
-	setLoading({ loading }) {
-		this.setState(state => ({ ...state, loading: loading }))
+	setTitle({ title }) {
+		this.setState(state => ({ ...state, title }))
 	}
 
 	render() {
 		const { Component, pageProps } = this.props
 		return (
-			<Layout loading={this.state.loading}>
-				{/* {this.state.loading && <Loader />} */}
+			<Layout title={this.state.title}>
 				<Component
 					{...pageProps}
-					setAlert={alert => this.setAlert(alert)}
-					setLoading={loading => this.setLoading(loading)}
+					setTitle={title => this.setTitle({ title: title })}
 				/>
 			</Layout>
 		)

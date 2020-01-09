@@ -5,19 +5,36 @@ import { SearchBar } from '../searchBar/searchBar'
 const styles = require('./layout.scss')
 
 type Props = {
-	id?: string
 	children: ReactNode
-	headTitle: string
+	id?: string
+	title?: string
 }
 
-export const Layout = ({ id = 'layout', children, headTitle }: Props) => {
-	const [searchText, setSearchText]: [string, Function] = useState('')
+export const Layout = ({
+	children,
+	id = 'layout',
+	title = 'Mercado Libre'
+}: Props) => {
 	const router = useRouter()
+	const [searchText, setSearchText]: [string, Function] = useState('')
+	const [headTitle, setHeadTitle]: [string, Function] = useState('')
 
 	useEffect(() => {
-		if (router.pathname !== '/' && router.query.search)
-			setSearchText(router.query.search)
-		else setSearchText('')
+		switch (router.pathname) {
+			case '/items':
+				setSearchText(router.query.search)
+				setHeadTitle(`${router.query.search} en Mercado Libre`)
+				break
+			case '/items/[id]':
+				setSearchText(router.query.search)
+				setHeadTitle(title)
+				break
+
+			default:
+				setSearchText('')
+				setHeadTitle('Mercado Libre')
+				break
+		}
 	}, [router.pathname])
 
 	const handleSearch = () => {

@@ -21,14 +21,14 @@
 				@include flex(row, flex-start, flex-start);
 				font-weight: $font-weight-normal;
 				font-size: $font-size-l;
-				margin-right: $margin-s;
+				margin-right: $margin-s * 0.5;
 				> span {
 					font-size: $font-size-xxs;
 					margin: 3.8px 0 0 3px;
 				}
 			}
 			> img {
-				height: 28px;
+				height: 22px;
 			}
 		}
 		> h4 {
