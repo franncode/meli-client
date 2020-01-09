@@ -21,7 +21,7 @@
 		"node": "12.x"
 	},
 	"scripts": {
-		"audit": "lighthouse https://mercadolibre.now.sh --view",
+		"audit": "lighthouse https://mercadolibre.now.sh --view --output-path=./audit.html",
 		"build": "next build",
 		"dev": "next dev",
 		"prod": "npm run build && npm run start",

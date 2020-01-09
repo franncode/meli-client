@@ -8,6 +8,9 @@
 /.next
 /out
 
+# audit
+audit.html
+
 # misc
 .DS_Store
 .env*
