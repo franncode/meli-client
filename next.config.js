@@ -15,8 +15,7 @@ const withSass_config = {
 	cssModules: true,
 	cssLoaderOptions: {
 		localIdentName: '[local]___[hash:base64:5]'
-	},
-	postcssLoaderOptions: { autoprefixer: true }
+	}
 }
 
 const withOffline_config = {

@@ -1,4 +1,4 @@
-import { useCurrencyFormater } from '../../../utils/hooks/useCurrencyFormater'
+import { useCurrencyFormater } from '../../../utils/hooks/useCurrencyFormater/useCurrencyFormater'
 import PathBar from '../../../components/pathBar/pathBar'
 import { ImageProduct } from '../../../components/imageProduct/imageProduct'
 import { getProductById } from '../../../services/products'

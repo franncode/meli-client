@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { useCurrencyFormater } from '../../utils/hooks/useCurrencyFormater'
+import { useCurrencyFormater } from '../../utils/hooks/useCurrencyFormater/useCurrencyFormater'
 const styles = require('./resultProduct.scss')
 
 type Props = {

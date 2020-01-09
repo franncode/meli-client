@@ -11,8 +11,12 @@ type PriceFormated = {
 	decimalPart: string
 }
 
-export const useCurrencyFormater = (price: Price): PriceFormated => {
+export const useCurrencyFormater = (
+	price: Price,
+	testFunction?: Function
+): PriceFormated => {
 	return useMemo(() => {
+		testFunction()
 		const formatWholePart = () => {
 			let amountDigits = String(price.amount).split('')
 			if (amountDigits.length < 4) {
@@ -30,7 +34,7 @@ export const useCurrencyFormater = (price: Price): PriceFormated => {
 		}
 		const formatDecimalPart = () => {
 			if (price.decimals > 0) {
-				const decimalPart = String(price.decimals).split('')[2]
+				const decimalPart = String(price.decimals).slice(2)
 				if (decimalPart.length === 1) {
 					return `${decimalPart}0`
 				} else {

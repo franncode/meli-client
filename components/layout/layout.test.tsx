@@ -1,9 +1,9 @@
-import { mount } from 'enzyme'
+import { mount, shallow } from 'enzyme'
 import { Layout } from './layout'
 import React, { useState as useStateMock } from 'react'
 
-const children = mount(
-	<div id='children'>
+const children = shallow(
+	<div id='children' key='children'>
 		<h1>Zapatillas Nike</h1>
 		<p>$1200</p>
 	</div>

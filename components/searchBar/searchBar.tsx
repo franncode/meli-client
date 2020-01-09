@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { useMargins } from '../../utils/hooks/useMargins'
+import { useMargins } from '../../utils/hooks/useMargins/useMargins'
 const styles = require('./searchBar.scss')
 
 type Props = {
