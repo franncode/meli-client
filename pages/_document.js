@@ -68,6 +68,7 @@ export default class customDocument extends Document {
 						sizes='640x1136'
 						rel='apple-touch-startup-image'
 					/>
+					<noscript>Your browser does not support JavaScript!</noscript>
 				</Head>
 				<body>
 					<Main />
