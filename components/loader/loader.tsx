@@ -9,5 +9,3 @@ export const Loader = ({ id = 'loader' }: Props) => (
 		<img src={'/icons/logo.png'} alt='loading' />
 	</div>
 )
-
-export default Loader
