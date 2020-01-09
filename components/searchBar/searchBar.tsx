@@ -20,7 +20,7 @@ export const SearchBar = ({ margins, onChange, onSearch, value }: Props) => {
 		<header className={styles.searchBar} style={useMargins(margins)}>
 			<div>
 				<Link href='/'>
-					<img src={require('../../public/icons/logo.png')} alt='search icon' />
+					<img src={'/icons/logo.png'} alt='search icon' />
 				</Link>
 				<label htmlFor='searchBar'>
 					<input
@@ -35,10 +35,7 @@ export const SearchBar = ({ margins, onChange, onSearch, value }: Props) => {
 					/>
 				</label>
 				<div onClick={() => onSearch()}>
-					<img
-						src={require('../../public/icons/search.png')}
-						alt='search icon'
-					/>
+					<img src={'/icons/search.png'} alt='search icon' />
 				</div>
 			</div>
 		</header>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, ReactNode } from 'react'
 import { useRouter } from 'next/router'
 import { Head } from '../head/head'
 import { SearchBar } from '../searchBar/searchBar'
@@ -6,10 +6,11 @@ const styles = require('./layout.scss')
 
 type Props = {
 	id?: string
-	children: Node
+	children: ReactNode
+	headTitle: string
 }
 
-export const Layout = ({ id = 'layout', children }: Props) => {
+export const Layout = ({ id = 'layout', children, headTitle }: Props) => {
 	const [searchText, setSearchText]: [string, Function] = useState('')
 	const router = useRouter()
 
@@ -27,7 +28,7 @@ export const Layout = ({ id = 'layout', children }: Props) => {
 
 	return (
 		<div id={id} className={styles.layout}>
-			<Head />
+			<Head title={headTitle} />
 			<SearchBar
 				value={searchText}
 				onChange={setSearchText}

@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 const styles = require('./switcher.scss')
 
 type Props = {
@@ -6,10 +8,23 @@ type Props = {
 }
 
 export const Switcher = ({ isOn, onSwtich }: Props) => {
+	const [firstRender, seFirstRender] = useState(true)
+
+	const handleClick = () => {
+		seFirstRender(false)
+		onSwtich()
+	}
+
 	return (
 		<div
-			className={isOn ? styles.switcher_on : styles.switcher_off}
-			onClick={() => onSwtich()}
+			className={
+				firstRender
+					? styles.switcher
+					: isOn
+					? styles.switcher_on
+					: styles.switcher_off
+			}
+			onClick={() => handleClick()}
 		>
 			<img src='/images/circle.svg' alt='circle selector' />
 		</div>

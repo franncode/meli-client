@@ -56,6 +56,13 @@ export default function Items({ search, setLoading }) {
 				onSwtich={handleSwitch}
 			/>
 			<div>
+				{items.length === 0 && (
+					<h2
+						style={{ height: 212, alignSelf: 'center', alignContent: 'center' }}
+					>
+						Cargando resultados
+					</h2>
+				)}
 				{items.length > 0 &&
 					filteredItems.map(
 						({ id, price, title, city, picture, free_shipping }, index) => (

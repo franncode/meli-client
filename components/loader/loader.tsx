@@ -1,7 +1,11 @@
 const styles = require('./loader.scss')
 
-const Loader = () => (
-	<div className={styles.loader}>
+type Props = {
+	id?: string
+}
+
+export const Loader = ({ id = 'loader' }: Props) => (
+	<div id={id} className={styles.loader}>
 		<img src={'/icons/logo.png'} alt='loading' />
 	</div>
 )

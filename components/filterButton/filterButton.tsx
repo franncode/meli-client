@@ -1,6 +1,5 @@
 const styles = require('./filterButton.scss')
 import { Switcher } from '../switcher/switcher'
-import { useState } from 'react'
 
 type Props = {
 	id?: string

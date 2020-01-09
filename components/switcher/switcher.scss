@@ -1,23 +1,29 @@
 @import '../../public/styles/variables.scss';
 @import '../../public/styles/displays.scss';
 
-.switcher_off {
+.switcher {
 	@include flex(row, center, flex-start);
 	height: 22px;
 	width: 41px;
-	background-color: $color-grey-3;
 	border-radius: 11px;
+	background-color: $color-grey-3;
 	cursor: pointer;
 	transition: all 0.25s ease-out;
 	> img {
-		user-select: none;
 		margin-left: 3px;
+		user-select: none;
+	}
+}
+
+.switcher_off {
+	@extend .switcher;
+	> img {
 		animation: translate_to_off 0.25s ease-in-out 1 normal forwards;
 	}
 }
 
 .switcher_on {
-	@extend .switcher_off;
+	@extend .switcher;
 	background-color: $color-secondary;
 	> img {
 		margin-right: 3px;
