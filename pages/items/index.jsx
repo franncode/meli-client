@@ -5,9 +5,7 @@ import { useRouter } from 'next/router'
 import { searchProduct } from '../../services/products'
 import { FilterButton } from '../../components/filterButton/filterButton'
 import PathBar from '../../components/pathBar/pathBar'
-const ResultProduct = dynamic(() =>
-	import('../../components/resultProduct/resultProduct')
-)
+import ResultProduct from '../../components/resultProduct/resultProduct'
 import styles from './index.scss'
 
 export default function Items({ categories, items }) {
