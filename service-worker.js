@@ -52,7 +52,7 @@ workbox.routing.registerRoute(
 )
 
 workbox.routing.registerRoute(
-	/\.(?:png|gif|jpg|svg)$/,
+	/^https.*\.(?:png|gif|jpg|svg)$/,
 	new workbox.strategies.CacheFirst({
 		cacheName: 'images-cache',
 		cacheExpiration: {
