@@ -23,7 +23,6 @@ type Props = {
 }
 
 export default function Item({
-	id,
 	title,
 	price,
 	picture,
@@ -98,28 +97,19 @@ export default function Item({
 
 Item.getInitialProps = async ({ query, res }) => {
 	try {
-		const { data } = await getProductById(query.id)
-		const {
-			id,
-			title,
-			price,
-			picture,
-			condition,
-			free_shipping,
-			sold_quantity,
-			description,
-			categories
-		} = data.item
-		return {
-			id,
-			title,
-			price,
-			picture,
-			condition,
-			freeShipping: free_shipping,
-			soldQuantity: sold_quantity,
-			description,
-			categories
+		const product = await getProductById(query.id)
+		if (product.status === 200) {
+			return {
+				id: product.data.item.id,
+				title: product.data.item.title,
+				price: product.data.item.price,
+				picture: product.data.item.picture,
+				condition: product.data.item.condition,
+				freeShipping: product.data.item.free_shipping,
+				soldQuantity: product.data.item.sold_quantity,
+				description: product.data.item.description,
+				categories: product.data.item.categories
+			}
 		}
 	} catch (error) {
 		res.writeHead(302, {
