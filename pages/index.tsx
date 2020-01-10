@@ -1,9 +1,17 @@
 import { useRouter } from 'next/router'
 import { TileItem } from '../components/tileItem/tileItem'
 import { TrendsTile } from '../components/trendsTile/trendsTile'
+import { getTrends } from '../services/products'
+import { Trend } from '../services/products.interfaces'
 const styles = require('./index.scss')
 
-export default function Home() {
+type Props = {
+	trends: Trend[]
+}
+
+export default function Home({ trends }: Props) {
+	console.log('trends', trends)
+
 	const router = useRouter()
 	const tiles = [
 		{
@@ -40,7 +48,21 @@ export default function Home() {
 					<TileItem key={index} title={title} icon={icon} />
 				))}
 			</div>
-			<TrendsTile />
+			{trends && <TrendsTile trends={trends} />}
 		</div>
 	)
+}
+
+Home.getInitialProps = async ({ query, res }) => {
+	try {
+		const trends = await getTrends()
+		if (trends.status === 200) {
+			return trends.data
+		} else return { trends: false }
+	} catch (error) {
+		res.writeHead(302, {
+			Location: '/_error'
+		})
+		res.end()
+	}
 }

@@ -10,14 +10,10 @@ type Props = {
 	title?: string
 }
 
-export const Layout = ({
-	children,
-	id = 'layout',
-	title = 'Mercado Libre'
-}: Props) => {
+export const Layout = ({ children, id = 'layout', title }: Props) => {
 	const router = useRouter()
 	const [searchText, setSearchText] = useState('')
-	const [headTitle, setHeadTitle] = useState('')
+	const [headTitle, setHeadTitle] = useState('Mercado Libre')
 
 	useEffect(() => {
 		switch (router.pathname) {

@@ -53,7 +53,7 @@ export interface GetProductByIdReturn extends AxiosResponse {
 	data: GetProductData
 }
 
-type Trend = {
+export type Trend = {
 	keyword: string
 	url: string
 }

@@ -6,28 +6,10 @@ type Trend = {
 }
 
 type Props = {
-	trends?: Trend[]
+	trends: Trend[]
 }
 
-export const TrendsTile = ({
-	trends = [
-		{
-			keyword: 'Libros'
-		},
-		{ keyword: 'Remedios' },
-		{ keyword: 'Zapatillas' },
-		{
-			keyword: 'Libros'
-		},
-		{ keyword: 'Remedios' },
-		{ keyword: 'Zapatillas' },
-		{
-			keyword: 'Libros'
-		},
-		{ keyword: 'Remedios' },
-		{ keyword: 'Zapatillas' }
-	]
-}: Props) => {
+export const TrendsTile = ({ trends }: Props) => {
 	const trendsLists = [trends.slice(0, 3), trends.slice(3, 6), trends.slice(6)]
 
 	return (
