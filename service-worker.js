@@ -20,8 +20,6 @@ const bgSyncPlugin = new workbox.backgroundSync.Plugin('send-data', {
 	maxRetentionTime: 24 * 60
 })
 
-workbox.routing.registerRoute(/^http.*/, new workbox.strategies.NetworkOnly())
-
 workbox.routing.registerRoute(
 	/^https:\/\/fonts\.googleapis\.com/,
 	new workbox.strategies.CacheFirst({
@@ -52,7 +50,7 @@ workbox.routing.registerRoute(
 )
 
 workbox.routing.registerRoute(
-	/^https.*\.(?:png|gif|jpg|svg)$/,
+	/\.(?:png|gif|jpg|svg)$/,
 	new workbox.strategies.CacheFirst({
 		cacheName: 'images-cache',
 		cacheExpiration: {
@@ -73,7 +71,7 @@ workbox.routing.registerRoute(
 )
 
 workbox.routing.registerRoute(
-	/^https.*/,
+	/^https?.*/,
 	new workbox.strategies.NetworkFirst({
 		cacheName: 'general',
 		cacheExpiration: {
