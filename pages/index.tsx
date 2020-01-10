@@ -10,8 +10,6 @@ type Props = {
 }
 
 export default function Home({ trends }: Props) {
-	console.log('trends', trends)
-
 	const router = useRouter()
 	const tiles = [
 		{

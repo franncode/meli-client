@@ -12,6 +12,7 @@
 	> ul {
 		> li {
 			font-size: $font-size-s;
+			cursor: pointer;
 			&:nth-child(2) {
 				margin: $margin-s 0;
 			}
