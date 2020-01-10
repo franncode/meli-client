@@ -1,4 +1,5 @@
 import { Fragment, useEffect, useState } from 'react'
+import Router from 'next/router'
 import { searchProduct } from '../../services/products'
 import { FilterButton } from '../../components/filterButton/filterButton'
 import PathBar from '../../components/pathBar/pathBar'
@@ -62,15 +63,24 @@ export default function Items({ categories, items }) {
 	)
 }
 
-Items.getInitialProps = async ({ res, query }) => {
+Items.getInitialProps = async ({ query, res }) => {
 	try {
-		const { data } = await searchProduct(query.search)
-		const { categories, items } = data
+		let categories = []
+		let items = []
+		const { data, status } = await searchProduct(query.search)
+		if (status === 200) {
+			categories = data.categories
+			items = data.items
+		}
 		return { categories, items }
 	} catch (error) {
-		res.writeHead(302, {
-			Location: '/_error'
-		})
-		res.end()
+		if (res) {
+			res.writeHead(302, {
+				Location: '/_error'
+			})
+			res.end()
+		} else {
+			Router.replace('/_error')
+		}
 	}
 }

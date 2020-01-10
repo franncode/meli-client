@@ -33,9 +33,9 @@ export const TrendsTile = ({
 	return (
 		<div className={styles.trendsTile}>
 			<h3>Mas buscados:</h3>
-			{trendsLists.map(list => {
+			{trendsLists.map((list, index) => {
 				return (
-					<ul>
+					<ul key={index}>
 						<li>{list[0].keyword}</li>
 						<li>{list[1].keyword}</li>
 						<li>{list[2].keyword}</li>

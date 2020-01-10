@@ -36,8 +36,8 @@ const withOffline_config = {
 module.exports = withPlugins(
 	[
 		// [withOptimizedImages, {}],
-		[withSass, withSass_config]
-		// [withOffline, withOffline_config]
+		[withSass, withSass_config],
+		[withOffline, withOffline_config]
 	],
 	next_config
 )

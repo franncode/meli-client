@@ -16,13 +16,13 @@ export const Layout = ({
 	title = 'Mercado Libre'
 }: Props) => {
 	const router = useRouter()
-	const [searchText, setSearchText]: [string, Function] = useState('')
-	const [headTitle, setHeadTitle]: [string, Function] = useState('')
+	const [searchText, setSearchText] = useState('')
+	const [headTitle, setHeadTitle] = useState('')
 
 	useEffect(() => {
 		switch (router.pathname) {
 			case '/items':
-				setSearchText(router.query.search)
+				setSearchText(String(router.query.search))
 				setHeadTitle(`${router.query.search} en Mercado Libre`)
 				break
 			default:

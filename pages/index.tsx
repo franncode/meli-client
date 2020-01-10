@@ -36,8 +36,8 @@ export default function Home() {
 				onClick={() => hanldeClick()}
 			/>
 			<div className={styles.tiles}>
-				{tiles.map(({ title, icon }) => (
-					<TileItem title={title} icon={icon} />
+				{tiles.map(({ title, icon }, index) => (
+					<TileItem key={index} title={title} icon={icon} />
 				))}
 			</div>
 			<TrendsTile />
