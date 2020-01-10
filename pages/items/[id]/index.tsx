@@ -79,6 +79,12 @@ export default function Item({
 							<span>{decimalPart}</span>
 						</h1>
 						<button>Comprar</button>
+						{freeShipping && (
+							<span>
+								<img src='/icons/shippingNew.svg' alt='free shipping icon' />
+								Envío gratis
+							</span>
+						)}
 					</div>
 				</div>
 				<div className={styles.bottomPart}>

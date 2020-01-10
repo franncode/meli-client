@@ -60,6 +60,16 @@
 				cursor: pointer;
 				outline: 0;
 			}
+			> span {
+				@include flex(row, center, flex-start);
+				margin-top: $margin-m;
+				font-size: $font-size-s;
+				color: $color-pass;
+				> img {
+					height: 16px;
+					margin-right: $margin-s / 2;
+				}
+			}
 		}
 	}
 	> .bottomPart {
@@ -71,8 +81,8 @@
 		}
 		> pre {
 			margin-top: $margin-m;
+			white-space: pre-wrap;
 			font-size: $font-size-s;
-
 			color: $color-grey-3;
 		}
 	}
