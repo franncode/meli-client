@@ -1,5 +1,11 @@
 @import '../public/styles/global.scss';
 @import '../public/styles/variables.scss';
 @import '../public/styles/displays.scss';
-
 @import '../public/styles/fonts.scss';
+
+.home {
+	> img {
+		margin-top: $margin-s;
+		cursor: pointer;
+	}
+}
