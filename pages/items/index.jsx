@@ -1,5 +1,4 @@
 import { Fragment, useEffect, useState } from 'react'
-import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 // import { Head } from '../../components/head/head'
 import { searchProduct } from '../../services/products'

@@ -25,15 +25,9 @@ export const Layout = ({
 				setSearchText(router.query.search)
 				setHeadTitle(`${router.query.search} en Mercado Libre`)
 				break
-			case '/items/[id]':
-				setSearchText(router.query.search)
-				setHeadTitle(title)
-				break
-
 			default:
-				console.log('entre')
-
 				setSearchText('')
+				setHeadTitle(title)
 				break
 		}
 	}, [router.pathname])
