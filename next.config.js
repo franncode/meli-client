@@ -1,6 +1,7 @@
 const withPlugins = require('next-compose-plugins')
-const withOptimizedImages = require('next-optimized-images')
+// const withOptimizedImages = require('next-optimized-images')
 const withSass = require('@zeit/next-sass')
+const WithOptimizeCSS = require('optimize-css-assets-webpack-plugin')
 const withOffline = require('next-offline')
 const { join } = require('path')
 
@@ -8,6 +9,12 @@ const next_config = {
 	target: 'serverless',
 	env: {
 		api: 'https://server-mercadolibre.herokuapp.com/api/'
+	},
+	webpack: (config, options) => {
+		config.optimization.minimizer = []
+		config.optimization.minimizer.push(new WithOptimizeCSS({}))
+
+		return config
 	}
 }
 
@@ -28,7 +35,7 @@ const withOffline_config = {
 
 module.exports = withPlugins(
 	[
-		[withOptimizedImages, {}],
+		// [withOptimizedImages, {}],
 		[withSass, withSass_config],
 		[withOffline, withOffline_config]
 	],

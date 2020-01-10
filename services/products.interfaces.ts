@@ -1,5 +1,18 @@
 import { AxiosResponse } from 'axios'
-import { Item } from './interfaces'
+
+export type Item = {
+	id: string
+	title: string
+	price: {
+		currency: string
+		amount: number
+		decimals: number
+	}
+	picture: string
+	condition: string
+	free_shipping: boolean
+	city: string
+}
 
 export type SearchProductData = {
 	author: {
@@ -38,4 +51,17 @@ export type GetProductData = {
 
 export interface GetProductByIdReturn extends AxiosResponse {
 	data: GetProductData
+}
+
+type Trend = {
+	keyword: string
+	url: string
+}
+
+export type GetTrendsData = {
+	trends: Trend[]
+}
+
+export interface GetTrendsReturn extends AxiosResponse {
+	data: GetTrendsData
 }

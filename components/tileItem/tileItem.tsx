@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const styles = require('./tileItem.scss')
 
 type Props = {
@@ -7,9 +9,11 @@ type Props = {
 
 export const TileItem = ({ icon, title }: Props) => {
 	return (
-		<div className={styles.tileItem}>
-			<img src={icon} alt={`${title} icon`} />
-			<h5>{title}</h5>
-		</div>
+		<Link href={`/items?search=${title}`}>
+			<div className={styles.tileItem}>
+				<img src={icon} alt={`${title} icon`} />
+				<h5>{title}</h5>
+			</div>
+		</Link>
 	)
 }

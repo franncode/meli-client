@@ -1,0 +1,23 @@
+@import '../../public/styles/variables.scss';
+@import '../../public/styles/displays.scss';
+
+.tileItem {
+	@include flex(column);
+	height: 168px;
+	width: 210px;
+	box-shadow: 0px 0px 8px 0px #dddddd;
+	background-color: white;
+	border-radius: $border-radius-s;
+	transition: all 0.25s ease-out;
+	cursor: pointer;
+	&:hover {
+		box-shadow: 0px 0px 8px 0px lighten($color-grey-3, 10%);
+	}
+	> img {
+		height: 64px;
+	}
+	> h5 {
+		margin-top: $margin-s;
+		font-size: $font-size-m;
+	}
+}

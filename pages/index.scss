@@ -8,4 +8,11 @@
 		margin-top: $margin-s;
 		cursor: pointer;
 	}
+	> div {
+		margin-top: $margin-m;
+	}
+	> .tiles {
+		@include flex(row, center, space-between);
+		flex: 1;
+	}
 }
