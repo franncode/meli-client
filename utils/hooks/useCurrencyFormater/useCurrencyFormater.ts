@@ -34,11 +34,10 @@ export const useCurrencyFormater = (
 		}
 		const formatDecimalPart = () => {
 			if (price.decimals > 0) {
-				const decimalPart = String(price.decimals).slice(2)
-				if (decimalPart.length === 1) {
-					return `${decimalPart}0`
+				if (String(price.decimals).length > 2) {
+					return String(price.decimals)
 				} else {
-					return `${decimalPart}`
+					return `${price.decimals}0`
 				}
 			} else {
 				return ''
