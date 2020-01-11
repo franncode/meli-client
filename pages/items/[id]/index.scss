@@ -1,89 +1,102 @@
 @import '../../../public/styles/variables.scss';
 @import '../../../public/styles/displays.scss';
 
-.topBar {
-	@include flex(row, center, flex-start);
-	> p {
-		font-size: $font-size-xs;
-		cursor: pointer;
-		&:active,
-		&:hover {
-			color: $color-secondary;
+.item {
+	@include flex(column);
+	width: 100%;
+	.topBar {
+		@include flex(row, center, flex-start);
+		width: 100%;
+		> p {
+			font-size: $font-size-xs;
+			cursor: pointer;
+			flex-shrink: 0;
+			&:active,
+			&:hover {
+				color: $color-secondary;
+			}
+		}
+		> strong {
+			font-size: $font-size-xs;
+			font-weight: $font-weight-light;
+			margin: 0 $margin-s;
+			color: $color-grey-3;
 		}
 	}
-	> strong {
-		font-size: $font-size-xs;
-		font-weight: $font-weight-light;
-		margin: 0 $margin-s;
-		color: $color-grey-3;
+
+	.body {
+		width: 100%;
+		margin: 0 0 20px 0;
+		@include flex(column, flex-start, flex-start);
+		background-color: white;
+		border-radius: $border-radius-s;
+		.upperPart {
+			@include flex(row, flex-start, flex-start);
+			> div {
+				margin-right: $margin-m;
+				> p {
+					margin-top: $margin-m;
+					font-size: $font-size-xs;
+				}
+				> h2 {
+					margin-top: $margin-s;
+					font-size: $font-size-l;
+					font-weight: $font-weight-normal;
+				}
+				> h1 {
+					@include flex(row, flex-start, flex-start);
+					margin-top: $margin-m;
+					font-size: $font-size-xxl;
+					font-weight: $font-weight-normal;
+					> span {
+						font-size: $font-size-m;
+						margin: $margin-m / 4 0 0 4px;
+					}
+				}
+				> button {
+					width: calc(100%);
+					padding: 12px;
+					margin-top: $margin-m;
+					border: none;
+					border-radius: $border-radius-s;
+					color: white;
+					background-color: $color-secondary;
+					font-size: $font-size-s;
+					cursor: pointer;
+					outline: 0;
+				}
+				> span {
+					@include flex(row, center, flex-start);
+					margin-top: $margin-m;
+					font-size: $font-size-s;
+					color: $color-pass;
+					> img {
+						height: 16px;
+						margin-right: $margin-s / 2;
+					}
+				}
+			}
+		}
+		> .bottomPart {
+			padding: 0 $margin-m $margin-m $margin-m;
+			> h3 {
+				margin-top: $margin-m;
+				font-size: $font-size-xl;
+				font-weight: $font-weight-normal;
+			}
+			> pre {
+				margin-top: $margin-m;
+				white-space: pre-wrap;
+				font-size: $font-size-s;
+				color: $color-grey-3;
+			}
+		}
 	}
 }
 
-.body {
-	width: $max-width;
-	margin: 0 0 20px 0;
-	@include flex(column, flex-start, flex-start);
-	background-color: white;
-	border-radius: $border-radius-s;
-	.upperPart {
-		@include flex(row, flex-start, flex-start);
-		> div {
-			margin-right: $margin-m;
-			> p {
-				margin-top: $margin-m;
-				font-size: $font-size-xs;
-			}
-			> h2 {
-				margin-top: $margin-s;
-				font-size: $font-size-l;
-				font-weight: $font-weight-normal;
-			}
-			> h1 {
-				@include flex(row, flex-start, flex-start);
-				margin-top: $margin-m;
-				font-size: $font-size-xxl;
-				font-weight: $font-weight-normal;
-				> span {
-					font-size: $font-size-m;
-					margin: $margin-m / 4 0 0 4px;
-				}
-			}
-			> button {
-				width: calc(100%);
-				padding: 12px;
-				margin-top: $margin-m;
-				border: none;
-				border-radius: $border-radius-s;
-				color: white;
-				background-color: $color-secondary;
-				font-size: $font-size-s;
-				cursor: pointer;
-				outline: 0;
-			}
-			> span {
-				@include flex(row, center, flex-start);
-				margin-top: $margin-m;
-				font-size: $font-size-s;
-				color: $color-pass;
-				> img {
-					height: 16px;
-					margin-right: $margin-s / 2;
-				}
-			}
-		}
-	}
-	> .bottomPart {
-		padding: 0 $margin-m $margin-m $margin-m;
-		> h3 {
-			margin-top: $margin-m;
-			font-size: $font-size-xl;
-			font-weight: $font-weight-normal;
-		}
-		> pre {
-			margin-top: $margin-m;
-			white-space: pre-wrap;
-			font-size: $font-size-s;
-			color: $color-grey-3;
-		}
+@media (max-width: $query-l) {
+	.item {
+		width: calc(100% - #{$query-l-padding} * 2);
+		min-width: $min-width;
 	}
 }

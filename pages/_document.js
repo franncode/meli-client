@@ -45,8 +45,9 @@ export default class customDocument extends Document {
 					<meta name='mobile-web-app-capable' content='yes' />
 					<meta
 						name='apple-mobile-web-app-status-bar-style'
-						content='black-translucent'
+						content='default'
 					/>
+					{/* content='black-translucent' */}
 					<meta name='apple-mobile-web-app-capable' content='yes' />
 					<link
 						href='/splash/apple_splash_750.png'
