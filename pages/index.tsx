@@ -3,6 +3,7 @@ import { TileItem } from '../components/tileItem/tileItem'
 import { TrendsTile } from '../components/trendsTile/trendsTile'
 import { getTrends } from '../services/products'
 import { Trend } from '../services/products.interfaces'
+import { useCurrencyFormater } from '../utils/hooks/useCurrencyFormater/useCurrencyFormater'
 const styles = require('./index.scss')
 
 type Props = {

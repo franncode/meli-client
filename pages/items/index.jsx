@@ -11,6 +11,10 @@ export default function Items({ categories, items }) {
 	const [isFreeShippingFilterOn, setIsFreeShippingFilterOn] = useState(false)
 
 	useEffect(() => {
+		setFilteredItems(items)
+	}, [items])
+
+	useEffect(() => {
 		if (isFreeShippingFilterOn) {
 			const filteredItems = items.filter(({ free_shipping }) => free_shipping)
 			setFilteredItems(filteredItems)
@@ -34,11 +38,11 @@ export default function Items({ categories, items }) {
 			/>
 			<div>
 				{items.length === 0 && (
-					<h2
+					<h4
 						style={{ height: 212, alignSelf: 'center', alignContent: 'center' }}
 					>
-						Cargando resultados
-					</h2>
+						No hay publicaciones que coincidan con tu búsqueda
+					</h4>
 				)}
 				{items.length > 0 &&
 					filteredItems.map(

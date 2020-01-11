@@ -8,6 +8,11 @@
 		@include flex(column, flex-start, flex-start);
 		background-color: white;
 		border-radius: $border-radius-s;
+		> h4 {
+			display: grid;
+			font-size: $font-size-m;
+			font-weight: $font-weight-normal;
+		}
 	}
 }
 

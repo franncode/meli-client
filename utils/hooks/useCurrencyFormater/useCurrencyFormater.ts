@@ -32,17 +32,15 @@ export const useCurrencyFormater = (
 				return `$ ${amountWithDots}`
 			}
 		}
+
 		const formatDecimalPart = () => {
-			if (price.decimals > 0) {
-				if (String(price.decimals).length > 1) {
-					return String(price.decimals)
-				} else {
-					return `${price.decimals}0`
-				}
+			if (price.decimals !== 0) {
+				return price.decimals < 10 ? `${price.decimals}0` : `${price.decimals}`
 			} else {
 				return ''
 			}
 		}
+
 		return { wholePart: formatWholePart(), decimalPart: formatDecimalPart() }
 	}, [price])
 }

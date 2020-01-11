@@ -2,8 +2,8 @@ import init from 'jooks'
 import { useCurrencyFormater } from './useCurrencyFormater'
 
 const spy = jest.fn()
-const price = { currency: 'ARS', amount: 12592, decimals: 0.57 }
-const anotherPrice = { currency: 'ARS', amount: 10350, decimals: 0.99 }
+const price = { currency: 'ARS', amount: 12592, decimals: 57 }
+const anotherPrice = { currency: 'ARS', amount: 10350, decimals: 9 }
 
 describe('useCurrencyFormater', () => {
 	const jooks = init(useCurrencyFormater)
@@ -11,13 +11,20 @@ describe('useCurrencyFormater', () => {
 		spy.mockReset()
 	})
 
-	it("should return {	wholePart: '$ 12.592', decimalPart: '57' }", () => {
+	it('should return decimalPart with 57', () => {
 		const hook = jooks.run(price, spy)
 		expect(hook).toEqual({
 			wholePart: '$ 12.592',
 			decimalPart: '57'
 		})
-		expect(spy).toHaveBeenCalledTimes(1)
+	})
+
+	it('should return decimalPart with 90', () => {
+		const hook = jooks.run(anotherPrice, spy)
+		expect(hook).toEqual({
+			wholePart: '$ 10.350',
+			decimalPart: '90'
+		})
 	})
 
 	it('should compute the value only once if nothing else changes', () => {
@@ -31,7 +38,7 @@ describe('useCurrencyFormater', () => {
 			wholePart: '$ 12.592',
 			decimalPart: '57'
 		})
-		// It should have called the memoized function only once, not twice
+
 		expect(spy).toHaveBeenCalledTimes(1)
 	})
 
@@ -52,7 +59,7 @@ describe('useCurrencyFormater', () => {
 		const hook3 = jooks.run(anotherPrice, spy)
 		expect(hook3).toEqual({
 			wholePart: '$ 10.350',
-			decimalPart: '99'
+			decimalPart: '90'
 		})
 
 		expect(spy).toHaveBeenCalledTimes(2)
