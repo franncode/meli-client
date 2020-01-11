@@ -9,8 +9,6 @@ type Props = {
 
 export const TrendsTile = ({ trends }: Props) => {
 	const trendsLists = [trends.slice(0, 3), trends.slice(3, 6), trends.slice(6)]
-	console.log('trendsLists', trendsLists)
-	console.log('trends', trends)
 
 	return (
 		<div className={styles.trendsTile}>

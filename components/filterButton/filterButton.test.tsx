@@ -7,7 +7,7 @@ describe('<FilterButton/>', () => {
 		component = mount(
 			<FilterButton
 				text={'Envio gratis'}
-				onSwtich={() => console.log('test')}
+				onSwtich={() => jest.fn()}
 				isOn={false}
 			/>
 		)
