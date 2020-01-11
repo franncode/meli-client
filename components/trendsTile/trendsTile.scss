@@ -14,9 +14,10 @@
 		> li {
 			font-size: $font-size-s;
 			cursor: pointer;
-			&:nth-child(2) {
-				margin: $margin-s 0;
-			}
+			// &:nth-child(2) {
+			// 	margin: $margin-s 0;
+			// }
+			margin: ($margin-s / 2) 0;
 		}
 	}
 }
@@ -33,7 +34,9 @@
 			margin: ($margin-s * 1.5) ($margin-s * 3);
 		}
 		> ul {
-			margin: ($margin-s * 1.5) ($margin-s * 4);
+			> li {
+				margin: ($margin-s * 1.5) ($margin-s * 4) !important;
+			}
 		}
 	}
 }
@@ -43,7 +46,12 @@
 		padding-bottom: $margin-s;
 		@include flex(column, center, space-around);
 		> ul {
-			margin: 0;
+			> li {
+				text-align: center;
+				&:last-child {
+					margin-bottom: 0 !important;
+				}
+			}
 		}
 	}
 }

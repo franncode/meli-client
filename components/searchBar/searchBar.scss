@@ -52,13 +52,3 @@
 		width: calc(100% - #{$query-l-padding} * 2);
 	}
 }
-
-@media (max-width: $query-s) {
-	// .searchBar {
-	// 	> div {
-	// 		> img {
-	// 			display: none;
-	// 		}
-	// 	}
-	// }
-}
