@@ -3,12 +3,19 @@
 
 .pathBar {
 	@include flex(row, center, flex-start, wrap);
-	max-width: $max-width;
+	width: 100%;
+	min-width: $min-width;
 	margin: $margin-s 0;
 	> p {
 		font-size: $font-size-xs;
 	}
 	.lastPath {
 		font-weight: $font-weight-bold;
+	}
+}
+
+@media (max-width: $query-l) {
+	.pathBar {
+		width: calc(100% - #{$query-l-padding} * 2);
 	}
 }

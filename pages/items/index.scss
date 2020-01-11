@@ -2,8 +2,10 @@
 @import '../../public/styles/displays.scss';
 
 .results {
-	> div:last-child {
-		width: $max-width;
+	@include flex(column, center, flex-start);
+	width: 100%;
+	> .products {
+		width: 100%;
 		margin: 0 0 20px 0;
 		@include flex(column, flex-start, flex-start);
 		background-color: white;
@@ -24,4 +26,13 @@
 	padding: 0;
 	border: none;
 	background-color: $color-grey-4;
+}
+
+@media (max-width: $query-l) {
+	.results {
+		> .products {
+			width: calc(100% - #{$query-l-padding} * 2);
+			min-width: $min-width;
+		}
+	}
 }

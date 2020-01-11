@@ -7,10 +7,11 @@
 	width: 100%;
 	background-color: $color-primary;
 	> div {
-		flex: 1;
 		@include flex();
+		width: 100%;
 		max-width: $max-width;
 		height: 36px;
+		min-width: $min-width;
 		> img {
 			height: calc(100% - 4px);
 			margin-right: 18px;
@@ -48,22 +49,16 @@
 
 @media (max-width: $query-l) {
 	.searchBar > div {
-		padding: 0 $query-l-padding;
-	}
-}
-
-@media (max-width: $query-m) {
-	.searchBar > div {
-		padding: 0 $query-m-padding;
+		width: calc(100% - #{$query-l-padding} * 2);
 	}
 }
 
 @media (max-width: $query-s) {
-	.searchBar {
-		> div {
-			> img {
-				display: none;
-			}
-		}
-	}
+	// .searchBar {
+	// 	> div {
+	// 		> img {
+	// 			display: none;
+	// 		}
+	// 	}
+	// }
 }

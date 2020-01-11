@@ -25,25 +25,22 @@ export default function Items({ categories, items }) {
 
 	const handleSwitch = () => setIsFreeShippingFilterOn(!isFreeShippingFilterOn)
 
+	if (items.length === 0)
+		return (
+			<h4 style={{ height: 212, alignSelf: 'center', alignContent: 'center' }}>
+				No hay publicaciones que coincidan con tu búsqueda
+			</h4>
+		)
+
 	return (
 		<div className={styles.results}>
-			{/* <Head title={`${search} en Mercado Libre`} /> */}
-
 			<PathBar type={'categories'} categories={categories} />
-
 			<FilterButton
 				text='Envio gratis'
 				isOn={isFreeShippingFilterOn}
 				onSwtich={handleSwitch}
 			/>
-			<div>
-				{items.length === 0 && (
-					<h4
-						style={{ height: 212, alignSelf: 'center', alignContent: 'center' }}
-					>
-						No hay publicaciones que coincidan con tu búsqueda
-					</h4>
-				)}
+			<div className={styles.products}>
 				{items.length > 0 &&
 					filteredItems.map(
 						({ id, price, title, city, picture, free_shipping }, index) => (
