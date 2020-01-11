@@ -1,9 +1,8 @@
 import { useRouter } from 'next/router'
 import { TileItem } from '../components/tileItem/tileItem'
 import { TrendsTile } from '../components/trendsTile/trendsTile'
-import { getTrends } from '../services/products'
-import { Trend } from '../services/products.interfaces'
-import { useCurrencyFormater } from '../utils/hooks/useCurrencyFormater/useCurrencyFormater'
+import { getTrends } from '../services/trends'
+import { Trend } from '../services/interfaces/trends.interfaces'
 const styles = require('./index.scss')
 
 type Props = {

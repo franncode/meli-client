@@ -52,16 +52,3 @@ export type GetProductData = {
 export interface GetProductByIdReturn extends AxiosResponse {
 	data: GetProductData
 }
-
-export type Trend = {
-	keyword: string
-	url: string
-}
-
-export type GetTrendsData = {
-	trends: Trend[]
-}
-
-export interface GetTrendsReturn extends AxiosResponse {
-	data: GetTrendsData
-}

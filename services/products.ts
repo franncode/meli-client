@@ -1,9 +1,8 @@
 import axios from 'axios'
 import {
 	SearchProductReturn,
-	GetProductByIdReturn,
-	GetTrendsReturn
-} from './products.interfaces'
+	GetProductByIdReturn
+} from './interfaces/products.interfaces'
 const api = process.env.api
 
 export const searchProduct = async (
@@ -22,15 +21,6 @@ export const getProductById = async (
 ): Promise<GetProductByIdReturn> => {
 	try {
 		const response = await axios.get(`${api}items/${id}`)
-		return response
-	} catch (error) {
-		console.error(error)
-	}
-}
-
-export const getTrends = async (): Promise<GetTrendsReturn> => {
-	try {
-		const response = await axios.get(`${api}trends`)
 		return response
 	} catch (error) {
 		console.error(error)

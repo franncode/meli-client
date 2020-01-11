@@ -1,11 +1,7 @@
 import Link from 'next/link'
+import { Trend } from '../../services/interfaces/trends.interfaces'
 
 const styles = require('./trendsTile.scss')
-
-type Trend = {
-	keyword: string
-	url?: string
-}
 
 type Props = {
 	trends: Trend[]
@@ -13,6 +9,8 @@ type Props = {
 
 export const TrendsTile = ({ trends }: Props) => {
 	const trendsLists = [trends.slice(0, 3), trends.slice(3, 6), trends.slice(6)]
+	console.log('trendsLists', trendsLists)
+	console.log('trends', trends)
 
 	return (
 		<div className={styles.trendsTile}>
@@ -20,14 +18,14 @@ export const TrendsTile = ({ trends }: Props) => {
 			{trendsLists.map((list, index) => {
 				return (
 					<ul key={index}>
-						<Link href={`/items?search=${list[0].keyword}`}>
-							<li>{list[0].keyword}</li>
+						<Link href={`/items?search=${list[0]}`}>
+							<li>{list[0]}</li>
 						</Link>
-						<Link href={`/items?search=${list[1].keyword}`}>
-							<li>{list[1].keyword}</li>
+						<Link href={`/items?search=${list[1]}`}>
+							<li>{list[1]}</li>
 						</Link>
-						<Link href={`/items?search=${list[2].keyword}`}>
-							<li>{list[2].keyword}</li>
+						<Link href={`/items?search=${list[2]}`}>
+							<li>{list[2]}</li>
 						</Link>
 					</ul>
 				)
