@@ -21,5 +21,6 @@
 	-webkit-font-smoothing: antialiased;
 	> section {
 		@include flex();
+		width: 100%;
 	}
 }

@@ -2,8 +2,9 @@
 @import '../../public/styles/displays.scss';
 
 .trendsTile {
-	@include flex(row, center, space-around);
+	@include flex(row, center, space-around, wrap);
 	height: 168px;
+	width: 100%;
 	background-color: white;
 	border-radius: $border-radius-s;
 	> h3 {
@@ -16,6 +17,33 @@
 			&:nth-child(2) {
 				margin: $margin-s 0;
 			}
+		}
+	}
+}
+
+@media (max-width: $query-l) {
+	.trendsTile {
+		width: calc(100% - #{$query-l-padding} * 2);
+	}
+}
+@media (max-width: 810px) {
+	.trendsTile {
+		height: auto;
+		> h3 {
+			margin: 24px 48px;
+		}
+		> ul {
+			margin: 24px 68px;
+		}
+	}
+}
+
+@media (max-width: 610px) {
+	.trendsTile {
+		padding-bottom: $margin-s;
+		@include flex(column, center, space-around);
+		> ul {
+			margin: 0;
 		}
 	}
 }

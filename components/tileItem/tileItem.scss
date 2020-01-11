@@ -21,3 +21,30 @@
 		font-size: $font-size-m;
 	}
 }
+
+@media (max-width: $query-l) {
+	.tileItem {
+		height: 120px;
+		width: calc(50% - #{$margin-s} / 2);
+		margin-bottom: $margin-s;
+		> img {
+			height: 48px;
+		}
+		> h5 {
+			font-size: $font-size-s;
+		}
+	}
+}
+
+@media (max-width: 274px) {
+	.tileItem {
+		height: 84px;
+		width: 100%;
+		> img {
+			height: 36px;
+		}
+		> h5 {
+			font-size: $font-size-xs;
+		}
+	}
+}

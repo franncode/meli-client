@@ -42,6 +42,7 @@ export default function Home({ trends }: Props) {
 				alt='banner'
 				onClick={() => hanldeClick()}
 			/>
+
 			<div className={styles.tiles}>
 				{tiles.map(({ title, icon }, index) => (
 					<TileItem key={index} title={title} icon={icon} />

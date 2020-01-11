@@ -4,7 +4,10 @@
 @import '../public/styles/fonts.scss';
 
 .home {
+	@include flex(column);
+	width: 100%;
 	> img {
+		width: 100%;
 		margin-top: $margin-s;
 		cursor: pointer;
 	}
@@ -12,7 +15,40 @@
 		margin-top: $margin-m;
 	}
 	> .tiles {
-		@include flex(row, center, space-between);
-		flex: 1;
+		@include flex(row, center, space-between, wrap);
+		width: 100%;
+	}
+}
+
+@media (max-width: $query-l) {
+	.home {
+		> img {
+			padding: 0 $query-l-padding;
+			height: auto;
+		}
+
+		> .tiles {
+			padding: 0 $query-l-padding;
+		}
+	}
+}
+
+@media (max-width: $query-m) {
+	.home {
+		> img,
+		.tiles {
+			padding: 0 $query-m-padding;
+			height: auto;
+		}
+	}
+}
+
+@media (max-width: $query-s) {
+	.home {
+		> img {
+			padding: 0;
+			width: 170%;
+			height: auto;
+		}
 	}
 }

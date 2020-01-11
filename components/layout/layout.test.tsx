@@ -30,9 +30,7 @@ describe('<Layout/>', () => {
 	const setState = jest.fn()
 	beforeEach(() => {
 		useStateMock.mockImplementation(init => [init, setState])
-		component = mount(
-			<Layout children={children} headTitle={'Zapatillas Nike'} />
-		)
+		component = mount(<Layout children={children} />)
 	})
 
 	it('should render component', () => {

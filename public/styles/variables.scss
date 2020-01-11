@@ -35,3 +35,11 @@ $searchbar-height: 54px;
 $columns: 12;
 $gutter: 20px;
 $column: 80px;
+
+// QUERYS
+$query-s: 360px;
+$query-m: 550px;
+$query-l: 1020px;
+$query-s-padding: ($column / 4);
+$query-m-padding: ($column / 4);
+$query-l-padding: ($column / 3);
