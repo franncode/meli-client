@@ -16,8 +16,8 @@
 
 @media (max-width: $query-l) {
 	.imageProduct {
-		padding: $margin-s $margin-s 0 $margin-s;
-		margin: 0;
+		margin: $margin-s $margin-s 0 $margin-s;
+		// margin: 0;
 		> img {
 			width: 100%;
 			height: auto !important;
