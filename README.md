@@ -1,1 +1,1 @@
-<img src="./public/images/cover.png" alt="Header" height="100%"  width="100%">
+<img src="./public/icons/logo.png" alt="Logo" height="100%"  width="100%"> Mercado Libre by @franncode
