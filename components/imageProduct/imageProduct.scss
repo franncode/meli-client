@@ -16,12 +16,21 @@
 
 @media (max-width: $query-l) {
 	.imageProduct {
-		padding: 0 $margin-s;
-		margin: $margin-s 0;
+		padding: 0 $margin-s !important;
+		margin: $margin-s 0 !important;
 		> img {
 			width: 100%;
 			height: auto !important;
 			max-height: 680px !important;
+		}
+	}
+}
+
+@media (max-width: 530px) {
+	.imageProduct {
+		flex: 1 0 500px !important;
+		> img {
+			max-height: 500px !important;
 		}
 	}
 }
