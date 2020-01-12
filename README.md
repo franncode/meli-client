@@ -1,5 +1,5 @@
 # <img src="./public/icons/logo.png" alt="Logo" height="24px" > Mercado Libre by [@franncode](https://www.linkedin.com/in/franncode/)
-blazing fast web application installable on any device https://mercadolibre.now.sh/<br/>
+Blazing fast web application installable on any device https://mercadolibre.now.sh/<br/>
 
 ## Stack
 
