@@ -3,13 +3,20 @@ import { useMargins } from '../../utils/hooks/useMargins/useMargins'
 const styles = require('./searchBar.scss')
 
 type Props = {
+	id?: string
 	margins?: number | number[] | null
 	onChange: Function
 	onSearch: Function
 	value: string
 }
 
-export const SearchBar = ({ margins, onChange, onSearch, value }: Props) => {
+export const SearchBar = ({
+	id = 'searchBar',
+	margins,
+	onChange,
+	onSearch,
+	value
+}: Props) => {
 	const onKeyDown = (key: string) => {
 		if (key === 'Enter') {
 			onSearch()
@@ -17,7 +24,7 @@ export const SearchBar = ({ margins, onChange, onSearch, value }: Props) => {
 	}
 
 	return (
-		<header className={styles.searchBar} style={useMargins(margins)}>
+		<header id={id} className={styles.searchBar} style={useMargins(margins)}>
 			<div>
 				<Link href='/'>
 					<img src={'/icons/logo.png'} alt='search icon' />
@@ -26,7 +33,7 @@ export const SearchBar = ({ margins, onChange, onSearch, value }: Props) => {
 					<input
 						type='text'
 						name='searchInputText'
-						id='searchBar'
+						id='searchBarInput'
 						aria-label='searchInputText'
 						value={value}
 						onChange={({ target }) => onChange(target.value)}

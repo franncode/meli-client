@@ -2,8 +2,12 @@ import { useMemo } from 'react'
 
 type Margins = number | number[] | null
 
-export const useMargins = (margins: Margins) => {
+export const useMargins = (
+	margins: Margins,
+	testFunction?: Function | false
+) => {
 	return useMemo(() => {
+		testFunction && testFunction()
 		switch (typeof margins) {
 			case 'undefined':
 				return null

@@ -1,11 +1,5 @@
 const numberOfMonths = quantity => 30 * 24 * 60 * 60 * quantity
 
-if (workbox) {
-	console.log(`Yay! Workbox is loaded 🎉`)
-} else {
-	console.log(`Boo! Workbox didn't load 😬`)
-}
-
 self.addEventListener('message', event => {
 	if (event.data && event.data.type === 'SKIP_WAITING') {
 		self.skipWaiting()
