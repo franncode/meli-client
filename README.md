@@ -1,7 +1,7 @@
 # <img src="./public/icons/logo.png" alt="Logo" height="24px" > Mercado Libre by [@franncode](https://www.linkedin.com/in/franncode/)  
 ### Stack
 
-<img src="./public/images/stack/nextjs.svg" alt="Logo" height="22px"/> Nextjs  
+<a href="https://nextjs.org/"><img src="./public/images/stack/nextjs.svg" alt="Logo" height="22px"/></a> Nextjs  
 React framerwork with routing, static optimization, server side rendering, code splitting, and more!
 
 <img src="./public/images/stack/typescript.svg" alt="Logo" height="22px"/> Typescript  
