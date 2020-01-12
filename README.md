@@ -16,7 +16,7 @@ It allows you to use variables, nested rules, mixins, functions, and more.
 A tool for transforming CSS with JavaScript, in this proyect is used with autoprefixer.
 
 <a href="https://jestjs.io/"><img src="./public/images/stack/jest.svg" alt="Logo" height="22px"/></a>  Jest  
-Jest is a delightful JavaScript Testing Framework with a focus on simplicity.
+Delightful JavaScript Testing Framework with a focus on simplicity.
 
 <a href="https://developers.google.com/web/tools/workbox"><img src="./public/images/stack/workbox.svg" alt="Logo" height="22px"/></a>  Workbox  
 JavaScript Libraries for adding offline support to web apps.
