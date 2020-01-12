@@ -1,5 +1,7 @@
-# <img src="./public/icons/logo.png" alt="Logo" height="24px" > Mercado Libre by [@franncode](https://www.linkedin.com/in/franncode/)<br/>https://mercadolibre.now.sh/   
-### Stack
+# <img src="./public/icons/logo.png" alt="Logo" height="24px" > Mercado Libre by [@franncode](https://www.linkedin.com/in/franncode/)
+blazing fast web application installable on any device https://mercadolibre.now.sh/   
+
+## Stack
 
 <a href="https://nextjs.org/"><img src="./public/images/stack/nextjs.svg" alt="Logo" height="22px"/></a> Nextjs  
 React framerwork with routing, static optimization, server side rendering, code splitting, and more!
@@ -19,7 +21,7 @@ Jest is a delightful JavaScript Testing Framework with a focus on simplicity.
 <a href="https://developers.google.com/web/tools/workbox"><img src="./public/images/stack/workbox.svg" alt="Logo" height="22px"/></a>  Workbox  
 JavaScript Libraries for adding offline support to web apps.
 
-### Scripts
+## Scripts
 
 `npm i` Install all proyect dependencies
 
