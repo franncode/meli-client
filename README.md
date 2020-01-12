@@ -1,4 +1,5 @@
-# <img src="./public/icons/logo.png" alt="Logo" height="24px" > Mercado Libre by [@franncode](https://www.linkedin.com/in/franncode/)  
+# <img src="./public/icons/logo.png" alt="Logo" height="24px" > Mercado Libre by [@franncode](https://www.linkedin.com/in/franncode/)
+## https://mercadolibre.now.sh/  
 ### Stack
 
 <a href="https://nextjs.org/"><img src="./public/images/stack/nextjs.svg" alt="Logo" height="22px"/></a> Nextjs  
