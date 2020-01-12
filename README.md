@@ -2,7 +2,7 @@
 
 ### Stack
 
-<img src="./public/images/stack/nextjs.svg" alt="Logo" height="22px" > [Nextjs](https://nextjs.org/)<br/>
+<img src="./public/images/stack/nextjs.svg" alt="Logo" height="22px"/> Nextjs  
 React framerwork with routing, static optimization, server side rendering, code splitting, and more!
 
 <img src="./public/images/stack/typescript.svg" alt="Logo" height="22px" > Typescript  
