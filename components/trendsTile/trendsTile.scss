@@ -5,6 +5,7 @@
 	@include flex(row, center, space-around, wrap);
 	height: 168px;
 	width: 100%;
+	box-shadow: 0px 0px 8px 0px #dddddd;
 	background-color: white;
 	border-radius: $border-radius-s;
 	> h3 {
@@ -14,9 +15,6 @@
 		> li {
 			font-size: $font-size-s;
 			cursor: pointer;
-			// &:nth-child(2) {
-			// 	margin: $margin-s 0;
-			// }
 			margin: ($margin-s / 2) 0;
 		}
 	}

@@ -1,7 +1,7 @@
 @import '../../public/styles/variables.scss';
 @import '../../public/styles/displays.scss';
 
-.tileItem {
+.itemTile {
 	@include flex(column);
 	height: 168px;
 	width: 210px;
@@ -23,7 +23,7 @@
 }
 
 @media (max-width: $query-l) {
-	.tileItem {
+	.itemTile {
 		height: 120px;
 		width: calc(50% - #{$margin-s} / 2);
 		margin-bottom: $margin-s;
@@ -37,7 +37,7 @@
 }
 
 @media (max-width: 274px) {
-	.tileItem {
+	.itemTile {
 		height: 84px;
 		width: 100%;
 		> img {

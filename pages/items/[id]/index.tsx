@@ -46,7 +46,7 @@ export default function Item({
 	}
 
 	const formatedSoldQuantity =
-		soldQuantity > 0 ? `${soldQuantity} vendidos` : ''
+		soldQuantity > 0 ? `- ${soldQuantity} vendidos` : ''
 
 	const { wholePart, decimalPart } = useCurrencyFormater(price)
 
@@ -55,6 +55,7 @@ export default function Item({
 		picture,
 		link: router.asPath
 	}
+	console.log('soldQuantity', soldQuantity)
 
 	return (
 		<div className={styles.item}>
@@ -70,8 +71,8 @@ export default function Item({
 			<div className={styles.body}>
 				<div className={styles.upperPart}>
 					<ImageProduct picture={picture} />
-					<div>
-						<p>{`${formatedCondition()} - ${formatedSoldQuantity}`}</p>
+					<div className={styles.info}>
+						<p>{`${formatedCondition()} ${formatedSoldQuantity}`}</p>
 						<h2>{title}</h2>
 						<h1>
 							{wholePart}

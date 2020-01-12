@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import { TileItem } from '../components/tileItem/tileItem'
+import { ItemTile } from '../components/itemTile/itemTile'
 import { TrendsTile } from '../components/trendsTile/trendsTile'
 import { getTrends } from '../services/trends'
 import { Trend } from '../services/interfaces/trends.interfaces'
@@ -44,7 +44,7 @@ export default function Home({ trends }: Props) {
 
 			<div className={styles.tiles}>
 				{tiles.map(({ title, icon }, index) => (
-					<TileItem key={index} title={title} icon={icon} />
+					<ItemTile key={index} title={title} icon={icon} />
 				))}
 			</div>
 			{trends && <TrendsTile trends={trends} />}
@@ -52,7 +52,7 @@ export default function Home({ trends }: Props) {
 	)
 }
 
-Home.getInitialProps = async ({ query, res }) => {
+Home.getInitialProps = async ({ res }) => {
 	try {
 		const trends = await getTrends()
 		if (trends.status === 200) {
