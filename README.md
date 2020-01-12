@@ -24,11 +24,11 @@ JavaScript Libraries for adding offline support to web apps.
 
 `npm i` Install all proyect dependencies
 
-`audit` Make google lighthouse audit
+`npm run audit` Make google lighthouse audit
  
-`dev` Run proyect en development mode
+`npm run dev` Run proyect en development mode
 
-`prod` Run proyect en production mode
+`npm run prod` Run proyect en production mode
 
-`test`  Run tests
+`npm test`  Run tests
 
