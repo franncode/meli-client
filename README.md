@@ -1,5 +1,5 @@
 # <img src="./public/icons/logo.png" alt="Logo" height="24px" > Mercado Libre by [@franncode](https://www.linkedin.com/in/franncode/)
-blazing fast web application installable on any device https://mercadolibre.now.sh/   
+blazing fast web application installable on any device https://mercadolibre.now.sh/<br/>
 
 ## Stack
 
@@ -23,13 +23,28 @@ JavaScript Libraries for adding offline support to web apps.
 
 ## Scripts
 
-`npm i` Install all proyect dependencies
+Install all proyect dependencies
+```
+npm i
+```
 
-`npm run audit` Make google lighthouse audit
- 
-`npm run dev` Run proyect en development mode
+Make google lighthouse audit
+```
+npm run audit
+```
 
-`npm run prod` Run proyect en production mode
+Run proyect en development mode
+```
+npm run dev
+```
 
-`npm test`  Run tests
+Run proyect en production mode
+```
+npm run prod
+```
+
+Run tests
+```
+npm test
+```
 
