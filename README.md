@@ -25,7 +25,7 @@ JavaScript Libraries for adding offline support to web apps.
 
 Install all proyect dependencies
 ```
-npm i
+npm install
 ```
 
 Make google lighthouse audit
