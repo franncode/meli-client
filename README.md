@@ -4,19 +4,19 @@
 <a href="https://nextjs.org/"><img src="./public/images/stack/nextjs.svg" alt="Logo" height="22px"/></a> Nextjs  
 React framerwork with routing, static optimization, server side rendering, code splitting, and more!
 
-<img src="./public/images/stack/typescript.svg" alt="Logo" height="22px"/> Typescript  
+<a href="https://www.typescriptlang.org/"><img src="./public/images/stack/typescript.svg" alt="Logo" height="22px"/></a> Typescript  
 Extend the power of javascript by adding static typing, making component props more readable.
 
-<img src="./public/images/stack/sass.svg" alt="Logo" height="22px"/> Sass  
+<a href="https://sass-lang.com/"><img src="./public/images/stack/sass.svg" alt="Logo" height="22px"/></a>  Sass  
 It allows you to use variables, nested rules, mixins, functions, and more.
 
-<img src="./public/images/stack/postcss.svg" alt="Logo" height="22px"/> Postcss  
+<a href="https://postcss.org/"><img src="./public/images/stack/postcss.svg" alt="Logo" height="22px"/></a>  Postcss  
 A tool for transforming CSS with JavaScript, in this proyect is used with autoprefixer.
 
-<img src="./public/images/stack/jest.svg" alt="Logo" height="22px"/> Jest  
+<a href="https://jestjs.io/"><img src="./public/images/stack/jest.svg" alt="Logo" height="22px"/></a>  Jest  
 Jest is a delightful JavaScript Testing Framework with a focus on simplicity.
 
-<img src="./public/images/stack/workbox.svg" alt="Logo" height="22px"/> Workbox  
+<a href="https://developers.google.com/web/tools/workbox"><img src="./public/images/stack/workbox.svg" alt="Logo" height="22px"/></a>  Workbox  
 JavaScript Libraries for adding offline support to web apps.
 
 ### Scripts
