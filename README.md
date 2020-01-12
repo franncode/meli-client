@@ -23,7 +23,7 @@ JavaScript Libraries for adding offline support to web apps.
 
 ## Scripts
 
-Install all proyect dependencies
+Install proyect dependencies
 ```
 npm install
 ```
