@@ -55,7 +55,6 @@ export default function Item({
 		picture,
 		link: router.asPath
 	}
-	console.log('soldQuantity', soldQuantity)
 
 	return (
 		<div className={styles.item}>
