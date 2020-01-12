@@ -41,7 +41,7 @@ export default function Item({
 			case 'used':
 				return 'Usado'
 			default:
-				return null
+				return ''
 		}
 	}
 
