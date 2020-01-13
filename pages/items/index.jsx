@@ -27,9 +27,16 @@ export default function Items({ categories, items }) {
 
 	if (items.length === 0)
 		return (
-			<h4 style={{ height: 212, alignSelf: 'center', alignContent: 'center' }}>
-				No hay publicaciones que coincidan con tu búsqueda
-			</h4>
+			<div className={styles.noResults}>
+				<img src='/images/woman.svg' alt='woman with magnifying glass' />
+				<div>
+					<h3>No hay publicaciones que coincidan con tu búsqueda</h3>
+					<ul>
+						<li>Revisá la ortografía de la palabra.</li>
+						<li>Utilizá palabras más genéricas o menos palabras.</li>
+					</ul>
+				</div>
+			</div>
 		)
 
 	return (
