@@ -15,7 +15,7 @@ const bgSyncPlugin = new workbox.backgroundSync.Plugin('send-data', {
 })
 
 workbox.routing.registerRoute(
-	/\.(?:woff2)$/,
+	/.*\.woff2/,
 	new workbox.strategies.CacheFirst({
 		cacheName: 'fonts',
 		cacheableResponse: { statuses: [0, 200] }
