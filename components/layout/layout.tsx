@@ -8,9 +8,15 @@ type Props = {
 	children: ReactNode
 	id?: string
 	title?: string
+	containerStyle: {}
 }
 
-export const Layout = ({ children, id = 'layout', title }: Props) => {
+export const Layout = ({
+	children,
+	id = 'layout',
+	title,
+	containerStyle
+}: Props) => {
 	const router = useRouter()
 	const [searchText, setSearchText] = useState('')
 	const [headTitle, setHeadTitle] = useState('Mercado Libre')
@@ -42,7 +48,7 @@ export const Layout = ({ children, id = 'layout', title }: Props) => {
 				onChange={setSearchText}
 				onSearch={handleSearch}
 			/>
-			<section>{children}</section>
+			<section style={containerStyle}>{children}</section>
 		</div>
 	)
 }

@@ -6,13 +6,27 @@ import PathBar from '../../components/pathBar/pathBar'
 import ResultProduct from '../../components/resultProduct/resultProduct'
 import styles from './index.scss'
 
-export default function Items({ categories, items }) {
+export default function Items({ categories, items, setContainerStyle }) {
 	const [filteredItems, setFilteredItems] = useState([])
 	const [isFreeShippingFilterOn, setIsFreeShippingFilterOn] = useState(false)
 
 	useEffect(() => {
 		setFilteredItems(items)
 	}, [items])
+
+	useEffect(() => {
+		if (!filteredItems.length || !items.length) {
+			console.log('en tre')
+
+			setContainerStyle({
+				flex: 1
+			})
+		} else {
+			setContainerStyle({
+				flex: 0
+			})
+		}
+	}, [filteredItems])
 
 	useEffect(() => {
 		if (isFreeShippingFilterOn) {
