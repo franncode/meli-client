@@ -19,7 +19,7 @@
 		padding: 0 $margin-s !important;
 		margin: $margin-s 0 !important;
 		> img {
-			width: 100%;
+			width: 100% !important;
 			height: auto !important;
 			max-height: 680px !important;
 		}
@@ -31,6 +31,15 @@
 		flex: 1 0 500px !important;
 		> img {
 			max-height: 500px !important;
+		}
+	}
+}
+
+@media (max-width: 430px) {
+	.imageProduct {
+		flex: 1 0 380px !important;
+		> img {
+			max-height: 380px !important;
 		}
 	}
 }

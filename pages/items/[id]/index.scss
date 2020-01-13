@@ -31,6 +31,7 @@
 		border-radius: $border-radius-s;
 		.upperPart {
 			@include flex(row, flex-start, flex-start);
+			width: 100%;
 			.info {
 				margin-right: $margin-m;
 				> p {
@@ -54,7 +55,7 @@
 					}
 				}
 				> button {
-					width: calc(100%);
+					width: 100%;
 					padding: 12px;
 					margin-top: $margin-m;
 					border: none;
@@ -78,6 +79,7 @@
 			}
 		}
 		> .bottomPart {
+			width: 100%;
 			padding: 0 $margin-m $margin-m $margin-m;
 			> h3 {
 				margin-top: $margin-m;
@@ -110,6 +112,12 @@
 					> p {
 						margin-top: 0;
 					}
+				}
+			}
+			> .bottomPart {
+				> pre {
+					width: 70vw;
+					// margin-top: $margin-s;
 				}
 			}
 		}
