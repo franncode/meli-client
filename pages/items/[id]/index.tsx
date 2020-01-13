@@ -37,7 +37,8 @@ export default function Item({
 
 	useEffect(() => {
 		if (window) {
-			console.log(window.innerWidth)
+			// console.log(window.innerWidth)
+			// console.log('description', description)
 		}
 	}, [])
 
@@ -73,8 +74,6 @@ export default function Item({
 		picture,
 		link: router.asPath
 	}
-
-	console.log('description', description)
 
 	return (
 		<div className={styles.item}>
