@@ -15,23 +15,9 @@ const bgSyncPlugin = new workbox.backgroundSync.Plugin('send-data', {
 })
 
 workbox.routing.registerRoute(
-	/^https:\/\/fonts\.googleapis\.com/,
+	/\.(?:woff2)$/,
 	new workbox.strategies.CacheFirst({
-		cacheName: 'googleapis',
-		cacheExpiration: {
-			maxEntries: 30
-		},
-		cacheableResponse: { statuses: [0, 200] }
-	})
-)
-
-workbox.routing.registerRoute(
-	/^https:\/\/fonts\.gstatic\.com/,
-	new workbox.strategies.CacheFirst({
-		cacheName: 'gstatic',
-		cacheExpiration: {
-			maxEntries: 30
-		},
+		cacheName: 'fonts',
 		cacheableResponse: { statuses: [0, 200] }
 	})
 )
@@ -39,7 +25,8 @@ workbox.routing.registerRoute(
 workbox.routing.registerRoute(
 	/\.(?:js|css)$/,
 	new workbox.strategies.StaleWhileRevalidate({
-		cacheName: 'static-resources'
+		cacheName: 'static-resources',
+		cacheableResponse: { statuses: [0, 200] }
 	})
 )
 

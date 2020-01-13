@@ -4,6 +4,7 @@ import PathBar from '../../../components/pathBar/pathBar'
 import { Head } from '../../../components/head/head'
 import { ImageProduct } from '../../../components/imageProduct/imageProduct'
 import { getProductById } from '../../../services/products'
+import { useEffect } from 'react'
 const styles = require('./index.scss')
 
 type Props = {
@@ -34,6 +35,23 @@ export default function Item({
 }: Props) {
 	const router = useRouter()
 
+	useEffect(() => {
+		if (window) {
+			console.log(window.innerWidth)
+		}
+	}, [])
+
+	const formatedDescription = () => {
+		const column = 80
+		const queryLPadding = column / 3
+		const body = queryLPadding * 2
+
+		return description.replace(
+			'__________________________________________________________________________',
+			'____'
+		)
+	}
+
 	const formatedCondition = () => {
 		switch (condition) {
 			case 'new':
@@ -55,6 +73,8 @@ export default function Item({
 		picture,
 		link: router.asPath
 	}
+
+	console.log('description', description)
 
 	return (
 		<div className={styles.item}>
@@ -88,7 +108,7 @@ export default function Item({
 				</div>
 				<div className={styles.bottomPart}>
 					<h3>Descripción del producto</h3>
-					<pre>{description}</pre>
+					<pre>{formatedDescription()}</pre>
 				</div>
 			</div>
 		</div>
