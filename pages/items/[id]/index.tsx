@@ -1,10 +1,10 @@
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { useCurrencyFormater } from '../../../utils/hooks/useCurrencyFormater/useCurrencyFormater'
 import PathBar from '../../../components/pathBar/pathBar'
 import { Head } from '../../../components/head/head'
 import { ImageProduct } from '../../../components/imageProduct/imageProduct'
 import { getProductById } from '../../../services/products'
-import { useEffect } from 'react'
 const styles = require('./index.scss')
 
 type Props = {
@@ -34,24 +34,6 @@ export default function Item({
 	categories
 }: Props) {
 	const router = useRouter()
-
-	useEffect(() => {
-		if (window) {
-			// console.log(window.innerWidth)
-			// console.log('description', description)
-		}
-	}, [])
-
-	const formatedDescription = () => {
-		const column = 80
-		const queryLPadding = column / 3
-		const body = queryLPadding * 2
-
-		return description.replace(
-			'__________________________________________________________________________',
-			'____'
-		)
-	}
 
 	const formatedCondition = () => {
 		switch (condition) {
@@ -107,7 +89,7 @@ export default function Item({
 				</div>
 				<div className={styles.bottomPart}>
 					<h3>Descripción del producto</h3>
-					<pre>{formatedDescription()}</pre>
+					<pre>{description}</pre>
 				</div>
 			</div>
 		</div>

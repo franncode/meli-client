@@ -86,9 +86,10 @@
 			}
 			> pre {
 				margin-top: $margin-m;
-				white-space: pre-wrap;
 				font-size: $font-size-s;
 				color: $color-grey-3;
+				white-space: pre-wrap;
+				word-break: break-word;
 			}
 		}
 	}
