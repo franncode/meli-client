@@ -4,7 +4,7 @@ import { searchProduct } from '../../services/products'
 import { FilterButton } from '../../components/filterButton/filterButton'
 import PathBar from '../../components/pathBar/pathBar'
 import ResultProduct from '../../components/resultProduct/resultProduct'
-import styles from './index.scss'
+const styles = require('./index.scss')
 
 export default function Items({ categories, items, setContainerStyle }) {
 	const [filteredItems, setFilteredItems] = useState([])
@@ -16,8 +16,6 @@ export default function Items({ categories, items, setContainerStyle }) {
 
 	useEffect(() => {
 		if (!filteredItems.length || !items.length) {
-			console.log('en tre')
-
 			setContainerStyle({
 				flex: 1
 			})

@@ -44,15 +44,19 @@ export default function Item({
 	}
 
 	const handleShare = () => {
-		if (navigator.share) {
-			navigator
+		let nav: any = navigator
+		console.log('entre')
+		console.log(nav)
+
+		if (nav.share) {
+			nav
 				.share({
 					title: 'web.dev',
 					text: 'Check out web.dev.',
 					url: 'https://web.dev/'
 				})
 				.then(() => alert('Successful share'))
-				.catch(error => alert('Error sharing', error))
+				.catch(error => console.log('Error sharing', error))
 		}
 	}
 
@@ -82,11 +86,11 @@ export default function Item({
 							className={favorite ? styles.favorite : styles.noFavorite}
 							onClick={() => handleShare()}
 						>
-							<img
+							{/* <img
 								src={favorite ? '/icons/favorite.svg' : '/icons/noFavorite.svg'}
 								alt='icono de favorito'
-							/>
-							{favorite ? 'Agregado a favoritos' : 'Agregar a favoritos'}
+							/> */}
+							Compartir
 						</button>
 						{freeShipping && (
 							<span>
