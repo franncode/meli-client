@@ -20,10 +20,10 @@
 		> button {
 			flex: 1;
 			@include flex();
-			// height: 32px;
 			padding: $margin-s / 2 0;
 			font-size: $font-size-s;
 			border-radius: $border-radius-s;
+			// font-weight: $font-weight-bold;
 			cursor: pointer;
 		}
 		> button:first-child {
@@ -34,7 +34,7 @@
 		> button:last-child {
 			> img {
 				height: 12px;
-				margin-right: 4px;
+				margin-right: 6px;
 			}
 			background-color: #fdd835;
 		}
