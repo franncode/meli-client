@@ -20,8 +20,9 @@
 		> button {
 			flex: 1;
 			@include flex();
-			height: 32px;
-			font-size: $font-size-xs;
+			// height: 32px;
+			padding: $margin-s / 2 0;
+			font-size: $font-size-s;
 			border-radius: $border-radius-s;
 			cursor: pointer;
 		}
