@@ -53,7 +53,7 @@ workbox.routing.registerRoute(
 
 workbox.routing.registerRoute(
 	/^https?.*/,
-	new workbox.strategies.NetworkFirst({
+	new workbox.strategies.StaleWhileRevalidate({
 		cacheName: 'general',
 		cacheExpiration: {
 			maxAgeSeconds: numberOfMonths(0.5)

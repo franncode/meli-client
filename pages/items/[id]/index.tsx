@@ -7,22 +7,6 @@ import { ImageProduct } from '../../../components/imageProduct/imageProduct'
 import { getProductById } from '../../../services/products'
 const styles = require('./index.scss')
 
-type Props = {
-	id: string
-	title: string
-	price: {
-		currency: string
-		amount: number
-		decimals: number
-	}
-	picture: string
-	condition: 'new' | 'used'
-	freeShipping: boolean
-	soldQuantity: number
-	description: string
-	categories: string[]
-}
-
 export default function Item({
 	title,
 	price,
@@ -32,8 +16,10 @@ export default function Item({
 	soldQuantity,
 	description,
 	categories
-}: Props) {
+}) {
 	const router = useRouter()
+
+	const [favorite, setFavorit] = useState(false)
 
 	const formatedCondition = () => {
 		switch (condition) {
@@ -57,6 +43,19 @@ export default function Item({
 		link: router.asPath
 	}
 
+	const handleShare = () => {
+		if (navigator.share) {
+			navigator
+				.share({
+					title: 'web.dev',
+					text: 'Check out web.dev.',
+					url: 'https://web.dev/'
+				})
+				.then(() => alert('Successful share'))
+				.catch(error => alert('Error sharing', error))
+		}
+	}
+
 	return (
 		<div className={styles.item}>
 			<Head
@@ -78,7 +77,17 @@ export default function Item({
 							{wholePart}
 							<span>{decimalPart}</span>
 						</h1>
-						<button>Comprar</button>
+						<button className={styles.buyButton}>Comprar</button>
+						<button
+							className={favorite ? styles.favorite : styles.noFavorite}
+							onClick={() => handleShare()}
+						>
+							<img
+								src={favorite ? '/icons/favorite.svg' : '/icons/noFavorite.svg'}
+								alt='icono de favorito'
+							/>
+							{favorite ? 'Agregado a favoritos' : 'Agregar a favoritos'}
+						</button>
 						{freeShipping && (
 							<span>
 								<img src='/icons/shippingNew.svg' alt='free shipping icon' />

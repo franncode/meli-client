@@ -8,7 +8,11 @@ type Props = {
 }
 
 export const TrendsTile = ({ trends }: Props) => {
-	const trendsLists = [trends.slice(0, 3), trends.slice(3, 6), trends.slice(6)]
+	const trendsLists = [
+		trends.slice(0, 3),
+		trends.slice(3, 6),
+		trends.slice(6, 9)
+	]
 
 	return (
 		<div className={styles.trendsTile}>
@@ -16,15 +20,13 @@ export const TrendsTile = ({ trends }: Props) => {
 			{trendsLists.map((list, index) => {
 				return (
 					<ul key={index}>
-						<Link href={`/items?search=${list[0]}`}>
-							<li>{list[0]}</li>
-						</Link>
-						<Link href={`/items?search=${list[1]}`}>
-							<li>{list[1]}</li>
-						</Link>
-						<Link href={`/items?search=${list[2]}`}>
-							<li>{list[2]}</li>
-						</Link>
+						{list.map((item, index) => {
+							return (
+								<Link key={index} href={`/items?search=${item}`}>
+									<li>{item}</li>
+								</Link>
+							)
+						})}
 					</ul>
 				)
 			})}
