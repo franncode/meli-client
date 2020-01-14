@@ -2,6 +2,8 @@ import { useState, useEffect, ReactNode } from 'react'
 import { useRouter } from 'next/router'
 import { Head } from '../head/head'
 import { SearchBar } from '../searchBar/searchBar'
+import { InstallBanner } from '../installBanner/installBanner'
+
 const styles = require('./layout.scss')
 
 type Props = {
@@ -48,6 +50,7 @@ export const Layout = ({
 				onChange={setSearchText}
 				onSearch={handleSearch}
 			/>
+			<InstallBanner />
 			<section style={containerStyle}>{children}</section>
 		</div>
 	)

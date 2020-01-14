@@ -53,15 +53,16 @@ export default function Home({ trends }: Props) {
 }
 
 Home.getInitialProps = async ({ res }) => {
-	try {
-		const trends = await getTrends()
-		if (trends.status === 200) {
-			return trends.data
-		} else return { trends: false }
-	} catch (error) {
-		res.writeHead(302, {
-			Location: '/_error'
-		})
-		res.end()
-	}
+	// try {
+	// 	const trends = await getTrends()
+	// 	if (trends.status === 200) {
+	// 		return trends.data
+	// 	} else return { trends: false }
+	// } catch (error) {
+	// 	res.writeHead(302, {
+	// 		Location: '/_error'
+	// 	})
+	// 	res.end()
+	// }
+	return { trends: false }
 }
