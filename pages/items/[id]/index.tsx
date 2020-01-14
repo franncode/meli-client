@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { useCurrencyFormater } from '../../../utils/hooks/useCurrencyFormater/useCurrencyFormater'
 import PathBar from '../../../components/pathBar/pathBar'
@@ -18,8 +18,21 @@ export default function Item({
 	categories
 }) {
 	const router = useRouter()
+	const [isMobile, setIsMobile] = useState(false)
 
-	const [favorite, setFavorit] = useState(false)
+	useEffect(() => {
+		if (
+			navigator.userAgent.match(/Android/i) ||
+			navigator.userAgent.match(/webOS/i) ||
+			navigator.userAgent.match(/iPhone/i) ||
+			navigator.userAgent.match(/iPad/i) ||
+			navigator.userAgent.match(/iPod/i) ||
+			navigator.userAgent.match(/BlackBerry/i) ||
+			navigator.userAgent.match(/Windows Phone/i)
+		) {
+			setIsMobile(true)
+		}
+	}, [])
 
 	const formatedCondition = () => {
 		switch (condition) {
@@ -44,16 +57,16 @@ export default function Item({
 	}
 
 	const handleShare = () => {
-		let nav: any = navigator
-		console.log('entre')
+		let nav: any = window.navigator
+
 		console.log(nav)
 
 		if (nav.share) {
 			nav
 				.share({
-					title: 'web.dev',
-					text: 'Check out web.dev.',
-					url: 'https://web.dev/'
+					title,
+					text: title,
+					url: router.asPath
 				})
 				.then(() => alert('Successful share'))
 				.catch(error => console.log('Error sharing', error))
@@ -82,16 +95,14 @@ export default function Item({
 							<span>{decimalPart}</span>
 						</h1>
 						<button className={styles.buyButton}>Comprar</button>
-						<button
-							className={favorite ? styles.favorite : styles.noFavorite}
-							onClick={() => handleShare()}
-						>
-							{/* <img
-								src={favorite ? '/icons/favorite.svg' : '/icons/noFavorite.svg'}
-								alt='icono de favorito'
-							/> */}
-							Compartir
-						</button>
+						{isMobile && (
+							<button
+								className={styles.shareButton}
+								onClick={() => handleShare()}
+							>
+								Compartir
+							</button>
+						)}
 						{freeShipping && (
 							<span>
 								<img src='/icons/shippingNew.svg' alt='free shipping icon' />

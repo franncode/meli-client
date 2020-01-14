@@ -65,18 +65,7 @@
 					cursor: pointer;
 					outline: 0;
 				}
-				> .favorite {
-					@extend .buyButton;
-					margin-top: $margin-s;
-					color: $color-pass;
-					background-color: white;
-					border: 1px solid $color-pass;
-					> img {
-						height: 12px;
-						margin-right: $margin-s / 2;
-					}
-				}
-				> .noFavorite {
+				> .shareButton {
 					@extend .buyButton;
 					margin-top: $margin-s;
 					color: $color-secondary;
