@@ -50,7 +50,7 @@ export const Layout = ({
 				onChange={setSearchText}
 				onSearch={handleSearch}
 			/>
-			<InstallBanner />
+			<InstallBanner onInstall={() => alert('Test')} />
 			<section style={containerStyle}>{children}</section>
 		</div>
 	)
