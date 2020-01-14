@@ -59,18 +59,12 @@ export default function Item({
 
 	const handleShare = () => {
 		let nav: any = window.navigator
-
-		console.log(nav)
-
 		if (nav.share) {
-			nav
-				.share({
-					title,
-					text: title,
-					url: router.asPath
-				})
-				.then(() => alert('Successful share'))
-				.catch(error => console.log('Error sharing', error))
+			nav.share({
+				title,
+				text: title,
+				url: router.asPath
+			})
 		}
 	}
 
