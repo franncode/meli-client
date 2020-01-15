@@ -3,6 +3,7 @@
 
 .bannerInstall {
 	@include flex(column);
+	display: block;
 	width: 100%;
 	background-color: white;
 	padding: $margin-s;
