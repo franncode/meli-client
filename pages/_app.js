@@ -9,7 +9,7 @@ class MyApp extends App {
 		containerStyle: {},
 		favorites: [],
 		history: [],
-		isMoblie: false
+		isMobile: false
 	}
 
 	componentDidMount = () => {
@@ -24,7 +24,7 @@ class MyApp extends App {
 		}
 
 		if (this.isMobileBrowser()) {
-			this.setState(state => ({ ...state, isMoblie: true }))
+			this.setState(state => ({ ...state, isMobile: true }))
 		}
 	}
 
@@ -55,7 +55,7 @@ class MyApp extends App {
 				value={{
 					favorites: this.state.favorites,
 					history: this.state.history,
-					isMoblie: this.state.isMoblie
+					isMobile: this.state.isMobile
 				}}
 			>
 				<Layout

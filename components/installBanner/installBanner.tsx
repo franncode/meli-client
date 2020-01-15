@@ -1,7 +1,7 @@
 const styles = require('./installBanner.scss')
 
 type Props = {
-	onInstall: Function
+	onInstall?: Function
 }
 
 export const InstallBanner = ({ onInstall }: Props) => {

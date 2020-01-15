@@ -1,8 +1,13 @@
 import { useState, useEffect, ReactNode } from 'react'
 import { useRouter } from 'next/router'
+import dynamic, { LoadableComponent } from 'next/dynamic'
 import { Head } from '../head/head'
 import { SearchBar } from '../searchBar/searchBar'
-import { InstallBanner } from '../installBanner/installBanner'
+const InstallBanner: LoadableComponent<any> = dynamic(() =>
+	import('../installBanner/installBanner').then(
+		component => component.InstallBanner
+	)
+)
 
 const styles = require('./layout.scss')
 
