@@ -6,3 +6,5 @@ const geolocation = navigator => {
 		}
 	)
 }
+
+// https://developer.mozilla.org/es/docs/WebAPI/Using_geolocation
