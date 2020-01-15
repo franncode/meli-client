@@ -3,13 +3,14 @@
 
 .bannerInstall {
 	@include flex(column);
-	display: block;
 	width: 100%;
 	background-color: white;
 	padding: $margin-s;
 	box-shadow: 0px 0px 8px 0px #dddddd;
 	position: sticky;
-	top: 100%;
+	position: -webkit-sticky;
+	top: 10px;
+	z-index: 1;
 	> h4 {
 		align-self: flex-start;
 		font-size: $font-size-m;

@@ -2,6 +2,7 @@ import React from 'react'
 import App from 'next/app'
 import { Layout } from '../components/layout/layout'
 import { UserContextProvider } from '../context/userContext'
+import { InstallBanner } from '../components/installBanner/installBanner'
 
 class MyApp extends App {
 	state = {
@@ -49,6 +50,7 @@ class MyApp extends App {
 						}
 					/>
 				</Layout>
+				<InstallBanner onInstall={() => alert('Test')} />
 			</UserContextProvider>
 		)
 	}
