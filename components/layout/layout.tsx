@@ -45,6 +45,7 @@ export const Layout = ({
 	return (
 		<div id={id} className={styles.layout}>
 			<Head title={headTitle} />
+			<InstallBanner onInstall={() => alert('Test')} />
 			<SearchBar
 				value={searchText}
 				onChange={setSearchText}
