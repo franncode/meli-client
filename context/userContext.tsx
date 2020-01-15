@@ -3,6 +3,7 @@ import { createContext } from 'react'
 type userContext = {
 	favorites: []
 	history: []
+	isMobile: boolean
 	cleanHistory?: Function
 	addFavorite?: Function
 	deleteFavorite?: Function
@@ -10,9 +11,10 @@ type userContext = {
 
 const initialValues: userContext = {
 	favorites: [],
-	history: []
+	history: [],
+	isMobile: false
 }
 
-const UserContext = createContext(initialValues)
+export const UserContext = createContext(initialValues)
 
 export const UserContextProvider = UserContext.Provider

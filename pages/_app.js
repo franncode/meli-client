@@ -8,7 +8,8 @@ class MyApp extends App {
 		title: 'Mercado Libre',
 		containerStyle: {},
 		favorites: [],
-		history: []
+		history: [],
+		isMoblie: false
 	}
 
 	componentDidMount = () => {
@@ -21,6 +22,22 @@ class MyApp extends App {
 		if (history) {
 			this.setState(state => ({ ...state, history }))
 		}
+
+		if (this.isMobileBrowser()) {
+			this.setState(state => ({ ...state, isMoblie: true }))
+		}
+	}
+
+	isMobileBrowser = () => {
+		return (
+			navigator.userAgent.match(/Android/i) ||
+			navigator.userAgent.match(/webOS/i) ||
+			navigator.userAgent.match(/iPhone/i) ||
+			navigator.userAgent.match(/iPad/i) ||
+			navigator.userAgent.match(/iPod/i) ||
+			navigator.userAgent.match(/BlackBerry/i) ||
+			navigator.userAgent.match(/Windows Phone/i)
+		)
 	}
 
 	setTitle({ title }) {
@@ -35,7 +52,11 @@ class MyApp extends App {
 		const { Component, pageProps } = this.props
 		return (
 			<UserContextProvider
-				value={{ favorites: this.state.favorites, history: this.state.history }}
+				value={{
+					favorites: this.state.favorites,
+					history: this.state.history,
+					isMoblie: this.state.isMoblie
+				}}
 			>
 				<Layout
 					title={this.state.title}

@@ -11,13 +11,15 @@ type Props = {
 	id?: string
 	title?: string
 	containerStyle: {}
+	isMobile: boolean
 }
 
 export const Layout = ({
 	children,
 	id = 'layout',
 	title,
-	containerStyle
+	containerStyle,
+	isMobile
 }: Props) => {
 	const router = useRouter()
 	const [searchText, setSearchText] = useState('')
@@ -45,7 +47,7 @@ export const Layout = ({
 	return (
 		<div id={id} className={styles.layout}>
 			<Head title={headTitle} />
-			<InstallBanner onInstall={() => alert('Test')} />
+			{isMobile && <InstallBanner onInstall={() => alert('Test')} />}
 			<SearchBar
 				value={searchText}
 				onChange={setSearchText}
