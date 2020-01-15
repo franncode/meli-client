@@ -1,5 +1,6 @@
 {
 	"version": 2,
+	"alias": "dev-meli.now.sh",
 	"builds": [
 		{
 			"src": "next.config.js",
