@@ -1,7 +1,8 @@
-import { useState, useEffect, ReactNode } from 'react'
+import { useState, useEffect, ReactNode, useContext } from 'react'
 import { useRouter } from 'next/router'
 import dynamic, { LoadableComponent } from 'next/dynamic'
 import { Head } from '../head/head'
+import { UserContext } from '../../context/userContext'
 import { SearchBar } from '../searchBar/searchBar'
 const InstallBanner: LoadableComponent<any> = dynamic(() =>
 	import('../installBanner/installBanner').then(
@@ -16,17 +17,16 @@ type Props = {
 	id?: string
 	title?: string
 	containerStyle: {}
-	isMobile: boolean
 }
 
 export const Layout = ({
 	children,
 	id = 'layout',
 	title,
-	containerStyle,
-	isMobile
+	containerStyle
 }: Props) => {
 	const router = useRouter()
+	const { isMobile } = useContext(UserContext)
 	const [searchText, setSearchText] = useState('')
 	const [headTitle, setHeadTitle] = useState('Mercado Libre')
 
