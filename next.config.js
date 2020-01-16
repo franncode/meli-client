@@ -11,9 +11,7 @@ const next_config = {
 		api: 'https://server-mercadolibre.herokuapp.com/api/'
 	},
 	webpack: (config, options) => {
-		config.optimization.minimizer = []
 		config.optimization.minimizer.push(new WithOptimizeCSS({}))
-
 		return config
 	}
 }
