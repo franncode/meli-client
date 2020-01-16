@@ -1,0 +1,98 @@
+@import '../../../public/styles/variables.scss';
+@import '../../../public/styles/displays.scss';
+
+.animation {
+	animation: loading 1s ease-in-out infinite normal forwards;
+}
+
+.resultProduct {
+	@include flex(row, center, flex-start);
+	width: 100%;
+	cursor: progress;
+	.image {
+		@extend .animation;
+		height: 180px;
+		width: 180px;
+		margin: $margin-s;
+		border-radius: $border-radius-s;
+		background-color: $color-grey-4;
+	}
+	> div {
+		max-width: 320px;
+		> div {
+			@include flex(row, center, flex-start);
+			margin-bottom: $margin-m;
+			> h3 {
+				@include flex(row, flex-start, flex-start);
+				@extend .animation;
+				height: 29px;
+				width: 85px;
+				border-radius: $border-radius-s;
+				background-color: $color-grey-4;
+				margin-right: $margin-s * 0.5;
+				> span {
+					margin: 3.8px 0 0 3px;
+				}
+			}
+			> img {
+				height: 22px;
+			}
+		}
+		> h4 {
+			@extend .animation;
+			height: 43px;
+			width: 320px;
+			border-radius: $border-radius-s;
+			background-color: $color-grey-4;
+			margin: 0;
+		}
+	}
+	> p {
+		@extend .animation;
+		height: 14px;
+		width: 45px;
+		border-radius: $border-radius-s;
+		margin: 0 $column 0 auto;
+		background-color: $color-grey-4;
+	}
+}
+
+@media (max-width: 770px) {
+	.resultProduct {
+		> p {
+			margin: 0 $margin-m 0 auto !important;
+		}
+	}
+}
+
+@media (max-width: 582px) {
+	.resultProduct {
+		flex-direction: column !important;
+		.image {
+			margin-bottom: 0 !important;
+		}
+		> div {
+			> div {
+				margin: 0 !important;
+				> h3 {
+					margin: $margin-s 0 !important;
+				}
+			}
+		}
+		> p {
+			margin: $margin-s auto !important;
+		}
+	}
+}
+
+@keyframes loading {
+	0% {
+		background-color: $color-grey-4;
+	}
+	50% {
+		background-color: darken($color: $color-grey-4, $amount: 15);
+	}
+	100% {
+		background-color: $color-grey-4;
+	}
+}

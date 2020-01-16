@@ -15,7 +15,7 @@ type Props = {
 	freeShipping: boolean
 }
 
-const ResultProduct = ({
+export const ResultProduct = ({
 	id,
 	price,
 	description,
@@ -47,4 +47,4 @@ const ResultProduct = ({
 	)
 }
 
-export default ResultProduct
+// export default ResultProduct
