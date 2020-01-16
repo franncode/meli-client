@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="16px" viewBox="0 0 18 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>heartFull</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Specs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="/-(view-2)" transform="translate(-510.000000, -383.000000)" stroke="#3483FA">
+            <g id="heartFull" transform="translate(511.000000, 384.000000)">
+                <path d="M1.252,7.52 C0.448688282,6.72586328 -0.00234835065,5.64258281 -9.8138762e-06,4.513 C-0.0024356133,3.38281332 0.448573145,2.29887933 1.252,1.504 C2.0520375,0.702149898 3.13930005,0.253204069 4.272,0.257 C5.412,0.257 6.486,0.699 7.292,1.504 L7.872,2.083 L8.709,1.248 C9.50949491,0.446101755 10.5969408,-0.00313111486 11.73,-1.62585463e-05 C12.87,-1.62585463e-05 13.944,0.443 14.751,1.247 C15.5502939,2.04416531 15.9995119,3.12663186 15.9995119,4.2555 C15.9995119,5.38436814 15.5502939,6.46683469 14.751,7.264 L7.872,14.118 L1.252,7.521 L1.252,7.52 Z" id="Path"></path>
+            </g>
+        </g>
+    </g>
+</svg>

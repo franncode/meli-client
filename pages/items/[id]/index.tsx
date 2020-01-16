@@ -77,19 +77,26 @@ export default function Item({
 							{wholePart}
 							<span>{decimalPart}</span>
 						</h1>
-						<button className={styles.buyButton}>Comprar</button>
-						{isMobile && (
-							<button
-								className={styles.shareButton}
-								onClick={() => handleShare()}
-							>
-								Compartir
-							</button>
-						)}
+						<button className={styles.primaryButton}>Comprar</button>
 						{freeShipping && (
-							<span>
+							<span className={styles.shipping}>
 								<img src='/icons/shippingNew.svg' alt='free shipping icon' />
 								Envío gratis
+							</span>
+						)}
+						{isMobile && (
+							<span className={styles.phantonButton}>
+								<img src='/icons/heart.svg' alt='icono de favorito' />
+								Agregar a favoritos
+							</span>
+						)}
+						{isMobile && (
+							<span
+								className={styles.phantonButton}
+								onClick={() => handleShare()}
+							>
+								<img src='/icons/share.svg' alt='icono de favorito' />
+								Compartir
 							</span>
 						)}
 					</div>
