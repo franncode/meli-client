@@ -46,5 +46,3 @@ export const ResultProduct = ({
 		</Link>
 	)
 }
-
-// export default ResultProduct
