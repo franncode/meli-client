@@ -29,6 +29,7 @@ export const Layout = ({
 	const { isMobile } = useContext(UserContext)
 	const [searchText, setSearchText] = useState('')
 	const [headTitle, setHeadTitle] = useState('Mercado Libre')
+	const [closeInstallBanner, setCloseInstallBanner] = useState(false)
 
 	useEffect(() => {
 		switch (router.pathname) {
@@ -49,10 +50,18 @@ export const Layout = ({
 		}
 	}
 
+	const handleInstall = wantInstall => {
+		if (!wantInstall) {
+			setCloseInstallBanner(true)
+		}
+	}
+
 	return (
 		<div id={id} className={styles.layout}>
 			<Head title={headTitle} />
-			{isMobile && <InstallBanner onInstall={() => alert('Test')} />}
+			{isMobile && !closeInstallBanner && (
+				<InstallBanner onInstall={handleInstall} />
+			)}
 			<SearchBar
 				value={searchText}
 				onChange={setSearchText}
