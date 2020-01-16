@@ -1,0 +1,86 @@
+@import '../../../public/styles/variables.scss';
+@import '../../../public/styles/displays.scss';
+
+@mixin simulateContent($height, $width) {
+	height: $height;
+	width: $width;
+	border-radius: $border-radius-s;
+	background-color: $color-grey-4;
+	animation: loading 1s ease-in-out infinite normal forwards;
+}
+
+.resultProduct {
+	@include flex(row, center, flex-start);
+	width: 100%;
+	cursor: progress;
+	.image {
+		@include simulateContent(180px, 180px);
+		margin: $margin-s;
+	}
+	> div {
+		max-width: 320px;
+		> div {
+			@include flex(row, center, flex-start);
+			margin-bottom: $margin-m;
+			> h3 {
+				@include flex(row, flex-start, flex-start);
+				@include simulateContent(29px, 85px);
+				margin-right: $margin-s * 0.5;
+				> span {
+					margin: 3.8px 0 0 3px;
+				}
+			}
+			> img {
+				height: 22px;
+			}
+		}
+		> h4 {
+			@include simulateContent(43px, 320px);
+			margin: 0;
+		}
+	}
+	> p {
+		@include simulateContent(14px, 45px);
+		margin: 0 $column 0 auto;
+	}
+}
+
+@media (max-width: 770px) {
+	.resultProduct {
+		> p {
+			margin: 0 $margin-m 0 auto !important;
+		}
+	}
+}
+
+@media (max-width: 582px) {
+	.resultProduct {
+		flex-direction: column !important;
+		.image {
+			margin-bottom: 0 !important;
+		}
+		> div {
+			> div {
+				margin: 0 !important;
+				> h3 {
+					margin: $margin-s 0 !important;
+				}
+			}
+		}
+		> p {
+			margin: $margin-s auto !important;
+		}
+	}
+}
+
+@keyframes loading {
+	0% {
+		background-color: $color-grey-4;
+	}
+	50% {
+		background-color: darken($color: $color-grey-4, $amount: 15);
+	}
+	100% {
+		background-color: $color-grey-4;
+	}
+}

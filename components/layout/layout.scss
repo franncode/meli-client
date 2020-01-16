@@ -20,7 +20,7 @@
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 	> section {
-		@include flex();
+		@include flex(column);
 		width: 100%;
 	}
 }

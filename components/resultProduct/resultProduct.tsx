@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { useCurrencyFormater } from '../../utils/hooks/useCurrencyFormater/useCurrencyFormater'
 const styles = require('./resultProduct.scss')
 
-type Props = {
+export type Props = {
 	id: string
 	price: {
 		currency: string
@@ -15,7 +15,7 @@ type Props = {
 	freeShipping: boolean
 }
 
-const ResultProduct = ({
+export const ResultProduct = ({
 	id,
 	price,
 	description,
@@ -46,5 +46,3 @@ const ResultProduct = ({
 		</Link>
 	)
 }
-
-export default ResultProduct

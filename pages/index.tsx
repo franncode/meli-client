@@ -64,4 +64,5 @@ Home.getInitialProps = async ({ res }) => {
 		})
 		res.end()
 	}
+	return { trends: false }
 }

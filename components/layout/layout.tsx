@@ -1,7 +1,14 @@
 import { useState, useEffect, ReactNode } from 'react'
 import { useRouter } from 'next/router'
+import dynamic, { LoadableComponent } from 'next/dynamic'
 import { Head } from '../head/head'
 import { SearchBar } from '../searchBar/searchBar'
+const InstallBanner: LoadableComponent<any> = dynamic(() =>
+	import('../installBanner/installBanner').then(
+		component => component.InstallBanner
+	)
+)
+
 const styles = require('./layout.scss')
 
 type Props = {
@@ -9,13 +16,15 @@ type Props = {
 	id?: string
 	title?: string
 	containerStyle: {}
+	isMobile: boolean
 }
 
 export const Layout = ({
 	children,
 	id = 'layout',
 	title,
-	containerStyle
+	containerStyle,
+	isMobile
 }: Props) => {
 	const router = useRouter()
 	const [searchText, setSearchText] = useState('')
@@ -43,6 +52,7 @@ export const Layout = ({
 	return (
 		<div id={id} className={styles.layout}>
 			<Head title={headTitle} />
+			{isMobile && <InstallBanner onInstall={() => alert('Test')} />}
 			<SearchBar
 				value={searchText}
 				onChange={setSearchText}

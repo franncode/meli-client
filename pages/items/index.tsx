@@ -1,9 +1,21 @@
 import { Fragment, useEffect, useState } from 'react'
 import Router from 'next/router'
+import dynamic, { LoadableComponent } from 'next/dynamic'
 import { searchProduct } from '../../services/products'
 import { FilterButton } from '../../components/filterButton/filterButton'
 import PathBar from '../../components/pathBar/pathBar'
-import ResultProduct from '../../components/resultProduct/resultProduct'
+import { ResultProductLoader } from '../../components/resultProduct/loader/resultProduct.loader'
+import { Props as ResultProductProps } from '../../components/resultProduct/resultProduct'
+const ResultProduct: LoadableComponent<ResultProductProps> = dynamic(
+	() =>
+		import('../../components/resultProduct/resultProduct').then(
+			component => component.ResultProduct
+		),
+	{
+		loading: ResultProductLoader
+	}
+)
+
 const styles = require('./index.scss')
 
 export default function Items({ categories, items, setContainerStyle }) {

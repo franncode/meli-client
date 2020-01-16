@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useContext } from 'react'
 import { useRouter } from 'next/router'
+import { UserContext } from '../../../context/userContext'
 import { useCurrencyFormater } from '../../../utils/hooks/useCurrencyFormater/useCurrencyFormater'
 import PathBar from '../../../components/pathBar/pathBar'
 import { Head } from '../../../components/head/head'
@@ -18,22 +19,7 @@ export default function Item({
 	categories
 }) {
 	const router = useRouter()
-	const [isMobile, setIsMobile] = useState(false)
-
-	useEffect(() => {
-		const isMobileBrowser = () => {
-			return (
-				navigator.userAgent.match(/Android/i) ||
-				navigator.userAgent.match(/webOS/i) ||
-				navigator.userAgent.match(/iPhone/i) ||
-				navigator.userAgent.match(/iPad/i) ||
-				navigator.userAgent.match(/iPod/i) ||
-				navigator.userAgent.match(/BlackBerry/i) ||
-				navigator.userAgent.match(/Windows Phone/i)
-			)
-		}
-		if (isMobileBrowser()) setIsMobile(true)
-	}, [])
+	const { isMobile } = useContext(UserContext)
 
 	const formatedCondition = () => {
 		switch (condition) {
@@ -67,6 +53,8 @@ export default function Item({
 			})
 		}
 	}
+
+	console.log(isMobile)
 
 	return (
 		<div className={styles.item}>
