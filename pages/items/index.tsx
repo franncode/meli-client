@@ -5,7 +5,8 @@ import { searchProduct } from '../../services/products'
 import { FilterButton } from '../../components/filterButton/filterButton'
 import PathBar from '../../components/pathBar/pathBar'
 import { ResultProductLoader } from '../../components/resultProduct/loader/resultProduct.loader'
-const ResultProduct: LoadableComponent<any> = dynamic(
+import { Props as ResultProductProps } from '../../components/resultProduct/resultProduct'
+const ResultProduct: LoadableComponent<ResultProductProps> = dynamic(
 	() =>
 		import('../../components/resultProduct/resultProduct').then(
 			component => component.ResultProduct
@@ -89,7 +90,6 @@ export default function Items({ categories, items, setContainerStyle }) {
 							</Fragment>
 						)
 					)}
-				<ResultProductLoader />
 			</div>
 		</div>
 	)
